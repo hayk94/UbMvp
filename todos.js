@@ -5,4 +5,7 @@
         //4 TODO: If the user is online see at what page he's now.
 //TODAY
         // TODO: research google and plan
-          // TODO: research meteor-user-status
+          // XXX: meteor-user-status seems to be a bad idea
+          // TODO: add user login to the master
+          // TODO: check https://docs.meteor.com/api/connections.html
+          // TODO: check https://github.com/artwells/meteor-accounts-guest
