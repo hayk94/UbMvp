@@ -5,3 +5,4 @@
         //4 TODO: If the user is online see at what page he's now.
 //TODAY
         // TODO: research google and plan
+          // TODO: research meteor-user-status
