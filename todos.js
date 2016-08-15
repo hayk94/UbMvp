@@ -6,6 +6,6 @@
 //TODAY
         // TODO: research google and plan
           // XXX: meteor-user-status seems to be a bad idea
-          // TODO: add user login to the master
+          
           // TODO: check https://docs.meteor.com/api/connections.html
           // TODO: check https://github.com/artwells/meteor-accounts-guest
