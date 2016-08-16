@@ -1,11 +1,21 @@
 <body>
   <ul>
     {{#each tasks}}
-      {{>task}}
+      {{> task}}
+    {{/each}}
+  </ul>
+  <ul>
+    <h5>Connections</h5>
+    {{#each conns}}
+      {{> conn}}
     {{/each}}
   </ul>
 </body>
 
 <template name="task">
   <li>{{text}}</li>
+</template>
+
+<template name="conn">
+  <li>{{info}}</li>
 </template>
