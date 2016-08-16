@@ -10,6 +10,6 @@ Template.body.helpers({
     return Tasks.find({});
   },
   conns(){
-    return Conns.find({});
+    return Conns.find({},{ sort: { createdAt: -1 } });
   },
 });

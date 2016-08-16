@@ -5,7 +5,7 @@
     {{/each}}
   </ul>
   <ul>
-    <h5>Connections</h5>
+    <h2>Connections</h2>
     {{#each conns}}
       {{> conn}}
     {{/each}}
@@ -20,6 +20,17 @@
   <li><ul>
     <li>{{connID}}</li>
     <li>{{ipAdr}}</li>
-    <li>{{httpHeads}}</li>
+    <li>
+      <ul>
+        <!-- {{#each item in httpHeads}}
+          {{#each keyval item}}
+            <li><span>{{key}} : {{val}}</span></li>
+          {{/each}}
+        {{/each}} -->
+        <li>{{httpHeads.host}}</li>
+        <li>{{httpHeads.userAgent}}</li>
+      </ul>
+    </li>
+    <li>{{createdAt}}</li>
   </ul></li>
 </template>

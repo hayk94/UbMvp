@@ -10,7 +10,11 @@ Meteor.startup(() => {
       Conns.insert({
         connID: conn.id,
         ipAdr: conn.clientAddress,
-        httpHeads: conn.httpHeaders,
+        httpHeads: {
+          host: conn.httpHeaders.host,
+          userAgent:conn.httpHeaders['user-agent'],
+        },
+        createdAt: new Date(),
       });
     });
 });
