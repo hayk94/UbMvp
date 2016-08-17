@@ -16,11 +16,13 @@ Meteor.startup(() => {
       if (!realIP) {
         console.log('You are running locally');
       }
-      console.log('You forget HTTP_FORWARDED_COUNT="1" or put the wrong number of proxies');
+      else {
+        console.log('You forget HTTP_FORWARDED_COUNT="1" or put the wrong number of proxies');
+      }
     }
 
     //check if the ip is registered
-    console.log(Ips.findOne({"ipAdr":ipAdr}));
+    // console.log(Ips.findOne({"ipAdr":ipAdr}));
     if (!Ips.findOne({"ipAdr":ipAdr})) {
 
         Ips.insert({
@@ -38,7 +40,22 @@ Meteor.startup(() => {
           createdAt: new Date(),
         });//Ips.insert
       //
-      console.log(); console.log();
+      // console.log(); console.log();
+    }
+    else {
+      Ips.update({"ipAdr":ipAdr}, {$push:{
+        'connections':{
+          connID: conn.id,
+          ipAdr: conn.clientAddress,
+          httpHeads: {
+            host: conn.httpHeaders.host,
+            userAgent:conn.httpHeaders['user-agent'],
+            realIP: conn.httpHeaders['x-real-ip'],
+          },
+          createdAt: new Date(),
+        }
+      }});
+
     }
 
       // console.log(conn);
