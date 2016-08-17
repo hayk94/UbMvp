@@ -16,9 +16,10 @@ Meteor.startup(() => {
     }
   console.log(allConns);
   Meteor.onConnection(function(conn){
-    // console.log(allConns);
+    console.log(allConns);
     //The array above is too big for the console let's convert it to string
-    var allConsStr = objToString(allConns);
+    var allConsStr = objToString(Meteor.default_server.stream_server.all_sockets());
+    console.log(allConsStr);
     Conns.insert({
             allConsStr,
             createdAt: new Date(),

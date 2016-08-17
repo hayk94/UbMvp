@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
-import { Conns } from '../api/conns.js';
+import { Conns } from '../imports/api/conns.js';
 
 import './main.html';
 
