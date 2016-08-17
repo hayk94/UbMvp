@@ -73,16 +73,6 @@ Meteor.startup(() => {
         });
     });//onClose
 
-      // console.log(conn);
-      // Conns.insert({
-      //   connID: conn.id,
-      //   ipAdr: conn.clientAddress,
-      //   httpHeads: {
-      //     host: conn.httpHeaders.host,
-      //     userAgent:conn.httpHeaders['user-agent'],
-      //     realIP: conn.httpHeaders['x-real-ip'],
-      //   },
-      //   createdAt: new Date(),
-      // });
+    
     });// Meteor onConnection
 });//Meteor startup
