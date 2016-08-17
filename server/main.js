@@ -35,7 +35,8 @@ Meteor.startup(() => {
               userAgent:conn.httpHeaders['user-agent'],
               realIP: conn.httpHeaders['x-real-ip'],
             },
-            createdAt: new Date(),
+            connectedAt: new Date(),
+            disconnectedAt: null,
           }],//connections
           createdAt: new Date(),
         });//Ips.insert
@@ -52,11 +53,16 @@ Meteor.startup(() => {
             userAgent:conn.httpHeaders['user-agent'],
             realIP: conn.httpHeaders['x-real-ip'],
           },
-          createdAt: new Date(),
+          connectedAt: new Date(),
+          disconnectedAt: null,
         }
       }});
 
-    }
+    }//else
+
+    conn.onClose(function () {
+      console.log('connection closed');
+    });
 
       // console.log(conn);
       // Conns.insert({
