@@ -1,6 +1,8 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
+import { Conns } from '../api/conns.js';
+
 import './main.html';
 
 Template.hello.onCreated(function helloOnCreated() {
@@ -11,6 +13,9 @@ Template.hello.onCreated(function helloOnCreated() {
 Template.hello.helpers({
   counter() {
     return Template.instance().counter.get();
+  },
+  conns(){
+    return Conns.find({},{ sort: { createdAt: -1 } });
   },
 });
 
