@@ -1,3 +1,10 @@
+**MVP GOALS**
+- [v] Get a list of users who attended the site.
+- [ ] See what links,buttons the user clicked.
+- [ ] See what pages they attended and their order as a timeline.
+- [ ] If the user is online see at what page he's now.
+
+
 **FIRST FEATURE**
 
 - [ V ] Get a list of users who attended the site.
