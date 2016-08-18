@@ -14,6 +14,32 @@ Template.body.helpers({
     return Conns.find({},{ sort: { createdAt: -1 } });
   },
   ips(){
-    return Ips.find({},{sort: { createdAt: -1 } }).pretty();
+    console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
+    return Ips.find({},{sort: { createdAt: -1 } });
   },
+});
+
+Template.registerHelper("keyval",function(object){
+  return _.map(object, function(value, key) {
+    return {
+      key: key,
+      value: value
+    };
+  });
+});
+
+// Template.ip.events({
+//   "click .showHide": function(event, template){
+//     console.log('I log');
+//      event.parent().next('conns').first().toggle();
+//   }
+// });
+
+Template.ip.onCreated(function functionName() {
+(function ($) {
+  $('.showHide').click(function () {
+    console.log('I log');
+        $(this).parent().next('conns').first().toggle();
+  });
+})(jQuery);
 });

@@ -6,7 +6,9 @@
   </ul>
   <ul>
     <h1>IPS</h1>
-    {{ips}}
+    {{#each ips}}
+      {{> ip}}
+    {{/each}}
 
     <h2>Connections</h2>
     {{#each conns}}
@@ -14,6 +16,27 @@
     {{/each}}
   </ul>
 </body>
+
+<template name="ip">
+  <ul>
+    <li><strong>ID:</strong> {{_id}}</li>
+    <li><strong>IP:</strong> {{ipAdr}}</li>
+    <li>
+      <p>
+        <strong>Connections from this Ip</strong>
+        <button class="showHide">Toggle</button>
+      </p>
+      <ul class="conns">
+      {{#each item in connections}}
+        {{#each keyval item}}
+          <li><span>{{key}} : {{value}}</span></li>
+        {{/each}}
+      {{/each}}
+    </ul>
+  </li>
+    <li><strong>Ip first registered:</strong> {{createdAt}}</li>
+  </ul>
+</template>
 
 <template name="task">
   <li>{{text}}</li>
