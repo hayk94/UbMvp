@@ -15,3 +15,5 @@
           // TODO: Play with the accounts-base
                 // TODO: https://guide.meteor.com/accounts.html
           // TODO: check https://github.com/artwells/meteor-accounts-guest
+
+// HTTP_FORWARDED_COUNT="1"
