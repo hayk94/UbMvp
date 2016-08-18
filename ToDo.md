@@ -6,5 +6,5 @@ CURRENT BRANCH TODOS
             - [ V ] if yes then put all the connections under it
           - [  ] Create a db to save online connections
               - [  ] onClose remove the connection from this db
-                      *Let this be duplicate of the first db just remove the ones that has disconnectedAt*
+                      *Let this be duplicate of the first db just remove the ones that has disconnectedAt or even simpler probably there is a way in monogoDb to filter them*
 - [ ] Print the info in the template
