@@ -9,6 +9,9 @@
 
           // XXX: check https://docs.meteor.com/api/connections.html
             //able to get the connections info
-          // TODO: Let's get a good grasp on how to create new templates
-          // TODO: and then DBs
+          // XXX: Let's get a good grasp on how to create new templates
+          // XXX: and then DBs
+            //able to create these
+          // TODO: Play with the accounts-base
+                // TODO: https://guide.meteor.com/accounts.html
           // TODO: check https://github.com/artwells/meteor-accounts-guest
