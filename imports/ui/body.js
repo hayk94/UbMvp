@@ -28,18 +28,19 @@ Template.registerHelper("keyval",function(object){
   });
 });
 
-// Template.ip.events({
-//   "click .showHide": function(event, template){
-//     console.log('I log');
-//      event.parent().next('conns').first().toggle();
-//   }
-// });
-
-Template.ip.onCreated(function functionName() {
-(function ($) {
-  $('.showHide').click(function () {
+Template.ip.events({
+  "click .showHide": function(event, template){
     console.log('I log');
-        $(this).parent().next('conns').first().toggle();
-  });
-})(jQuery);
+    console.log($(this));
+     $(this).parent().next('conns').first().toggle();
+  }
 });
+
+// Template.ip.onCreated(function functionName() {
+// (function ($) {
+//   $('.showHide').click(function () {
+//     console.log('I log');
+//         $(this).parent().next('conns').first().toggle();
+//   });
+// })(jQuery);
+// });
