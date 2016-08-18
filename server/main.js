@@ -90,16 +90,25 @@ Meteor.startup(() => {
 });//Meteor startup
 
 Meteor.methods({
-  'updateDB':function({clientIp,clientConnId}){ 
-          Ips.update(
-          { "ipAdr": clientIp, "connections.connID": clientConnId},
-          { "$push":
-              {"connections.$.clicks":
-                  {
-                      'clickedThis': clickedOne, 'clickedAt': new Date(),
-                  }
-              }
-          }
-      )
+  'updateDB':function({clientIp,clientConnId}){
+      //     Ips.update(
+      //     { "ipAdr": clientIp, "connections.connID": clientConnId},
+      //     { "$push":
+      //         {"connections.$.clicks":
+      //             {
+      //                 'clickedThis': clickedOne, 'clickedAt': new Date(),
+      //             }
+      //         }
+      //     }
+      // )
+
+      Ips.findAndModify({
+
+          //Find the desired document based on specified criteria
+          query: { "ipAdr": clientIp, connections: { $elemMatch: { connID: clientConnId}}},
+
+          //Update only the elements of the array where the specified criteria matches
+          update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
+      });
   }
 });
