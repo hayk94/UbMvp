@@ -55,6 +55,15 @@ Template.ip.events({
 
        $(event.target).next('.conns').toggle(500); //event.target is the event emitter
    });
+ }//.showHide clicks
+
+});//Template.ip.events
+
+Template.body.events({
+  "click *": function(event, template){
+     event.stopPropagation();
+     console.log('body all click log');
+     console.log('This click' + $(event.target).html().toString());
   }
 });
 
