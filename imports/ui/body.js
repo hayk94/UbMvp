@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import { Tasks } from '../api/tasks.js';
@@ -14,8 +15,12 @@ Template.body.helpers({
     return Conns.find({},{ sort: { createdAt: -1 } });
   },
   ips(){
-    console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
+    // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
     return Ips.find({},{sort: { createdAt: -1 } });
+      // XXX: //in stack overflow they say in order to show the
+      //whole collection as a string one should use publish and subscribe
+      // be sure to check that
+
   },
 });
 
@@ -63,7 +68,35 @@ Template.body.events({
   "click *": function(event, template){
      event.stopPropagation();
      console.log('body all click log');
-     console.log('This click' + $(event.target).html().toString());
+     var clickedOne = $(event.target).html().toString();
+     console.log('This click ' + clickedOne);
+     //getting the connID
+    //  Meteor.call("getSessionId", function(err, id) {
+    //   return console.log(id);
+    // });
+    var clientIp = headers.getClientIP();
+    var clientConnId = Meteor.connection._lastSessionId;
+    console.log(clientIp);
+    console.log(clientConnId);
+  
+    // Ips.findAndModify({
+    //
+    //     //Find the desired document based on specified criteria
+    //     query: { "ipAdr": clientIp, connections: { $elemMatch: { connID: clientConnId}}},
+    //
+    //     //Update only the elements of the array where the specified criteria matches
+    //     update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
+    // });
+
+    Meteor.call("updateDB", {clientIp,clientConnId}, function(error, result){
+      if(error){
+        console.log("error", error);
+      }
+      if(result){
+
+      }
+    });
+
   }
 });
 

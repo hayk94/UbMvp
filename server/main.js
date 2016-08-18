@@ -4,13 +4,23 @@ import '../imports/api/tasks.js';
 import { Conns } from  '../imports/api/conns.js';
 import { Ips } from '../imports/api/ips.js';
 
+
+
 Meteor.startup(() => {
   // code to run on server at startup
   Meteor.onConnection(function(conn){
     var connID = conn.id ;
     var ipAdr = conn.clientAddress ;
     var realIP = conn.httpHeaders['x-real-ip'] ;
+    console.log(connID);
+    // console.log(this.connection.id) this returns error
 
+    //trying to send the connID to the client
+        // Meteor.methods({
+        //   getSessionId: function() {
+        //   return connID;
+        //   }
+        // });
     //checking whether we are getting the right ips
     if (ipAdr !== realIP) {
       if (!realIP) {
@@ -37,6 +47,7 @@ Meteor.startup(() => {
               },//httpHeads
             connectedAt: new Date(),
             disconnectedAt: null,
+            clicks: Array(),
           }],//connections
           createdAt: new Date(),
         });//Ips.insert
@@ -55,6 +66,7 @@ Meteor.startup(() => {
           },
           connectedAt: new Date(),
           disconnectedAt: null,
+          clicks: Array(),
         }
       }});
 
@@ -73,6 +85,21 @@ Meteor.startup(() => {
         });
     });//onClose
 
-    
+
     });// Meteor onConnection
 });//Meteor startup
+
+Meteor.methods({
+  'updateDB':function({clientIp,clientConnId}){ 
+          Ips.update(
+          { "ipAdr": clientIp, "connections.connID": clientConnId},
+          { "$push":
+              {"connections.$.clicks":
+                  {
+                      'clickedThis': clickedOne, 'clickedAt': new Date(),
+                  }
+              }
+          }
+      )
+  }
+});
