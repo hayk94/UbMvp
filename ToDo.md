@@ -7,4 +7,5 @@ CURRENT BRANCH TODOS
           - [  ] Create a db to save online connections
               - [  ] onClose remove the connection from this db
                       *Let this be duplicate of the first db just remove the ones that has disconnectedAt or even simpler probably there is a way in monogoDb to filter them*
-- [ ] Print the info in the template
+                      *I think there is no need for this now, since if the connection has no disconnectedAt then it means it is online,* **HOWEVER consider for later that when the server is being restarted and there are active connections they do not get disconnectedAt value**
+- [ V ] Print the info in the template

@@ -28,11 +28,33 @@ Template.registerHelper("keyval",function(object){
   });
 });
 
+// Template.ip.onCreated(function () {
+//   console.log('created');
+//   $(function() {
+//     $(document).ready(function() {
+//       $('.conns').hide();
+//     });
+//
+//     });
+//   });
+
+
+
 Template.ip.events({
   "click .showHide": function(event, template){
     console.log('I log');
-    console.log($(this));
-     $(this).parent().next('conns').first().toggle();
+    // console.log($(this));// this is the whole template
+    console.log(event.target);
+    $(function() {
+       // your jQuery code here...
+      //  console.log($(event.target));
+      //  console.log($(event.target).parent());
+      //  console.log($(event.target).parent().next('conns'));
+      //  console.log($(event.target).parent().next('conns').first());
+      // console.log($(event.target).siblings('conns'));
+
+       $(event.target).next('.conns').toggle(500); //event.target is the event emitter
+   });
   }
 });
 
