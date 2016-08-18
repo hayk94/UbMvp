@@ -1,4 +1,4 @@
-CURRENT BRANCH TODOS
+**FIRST FEATURE**
 
 - [ V ] Get a list of users who attended the site.
     - [ V ] Create a db with IPs saved there as if users
