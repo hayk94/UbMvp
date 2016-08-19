@@ -77,17 +77,17 @@ Template.body.events({
   }, // click *
 
   //stopping the default link behavior, otherwise every link click is a new connection
-  "click a": function (event, template) {
-    event.preventDefault();
-  }
+  // "click a": function (event, template) {
+  //   event.preventDefault();
+  // }
 });
 
 
 
-//routing
-FlowRouter.route('/test',{
-  name: 'testPost',
-  action: function (params) {
-    console.log('This is my blog post:', params.postId);
-  }
-});
+// //routing
+// FlowRouter.route('/test',{
+//   name: 'testPost',
+//   action: function (params) {
+//     console.log('This is my blog post:', params.postId);
+//   }
+// });

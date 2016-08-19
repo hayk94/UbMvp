@@ -1,9 +1,9 @@
 <body>
-  <ul>
+  <!-- <ul>
     {{#each tasks}}
       {{> task}}
     {{/each}}
-  </ul>
+  </ul> -->
   <ul>
     <h1>IPS</h1>
     <!-- {{#each ips}}
@@ -14,15 +14,34 @@
     </pre>
 
     <a href="/test">test router</a>
-    <h2>Connections</h2>
+    <main>
+      {{>Template.dynamic template=content}}
+    </main>
+    <!-- <h2>Connections</h2> -->
     <!-- {{#each conns}}
       {{> conn}}
     {{/each}} -->
-    <pre>
+    <!-- <pre>
       {{conns}}
-    </pre>
+    </pre> -->
   </ul>
 </body>
+
+<template name="blogHome">
+  <p>
+    This is the home page of our blog
+  </p>
+  <p>
+    <a href="/hello-world">See Hello World Post</a>
+  </p>
+</template>
+
+<template name="blogPost">
+  <p>
+    <a href="/">Back</a> <br>
+    This is a sing blog post
+  </p>
+</template>
 
 <template name="ip">
   <ul>
