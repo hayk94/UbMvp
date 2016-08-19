@@ -27,4 +27,4 @@
 
 
 *PROPER RENDERING*
-  - [ ] Proper Render
+  - [v] Proper Render
