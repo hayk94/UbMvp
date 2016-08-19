@@ -19,7 +19,8 @@
 
 **SECOND FEATURE**
 
-- [ ] See what links,buttons the user clicked.
-      - [ ] body template events * clicks
-          - [ ] stopPropagation
-          - [ ] send to db
+- [v] See what links,buttons the user clicked.
+      - [v] body template events * clicks
+          - [v] stopPropagation
+          - [v] send to db
+      *Got the click events in the db just now need to properly render them in templates*

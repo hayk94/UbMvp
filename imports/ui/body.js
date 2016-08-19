@@ -78,7 +78,7 @@ Template.body.events({
     var clientConnId = Meteor.connection._lastSessionId;
     console.log(clientIp);
     console.log(clientConnId);
-  
+
     // Ips.findAndModify({
     //
     //     //Find the desired document based on specified criteria
@@ -88,7 +88,7 @@ Template.body.events({
     //     update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
     // });
 
-    Meteor.call("updateDB", {clientIp,clientConnId}, function(error, result){
+    Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
       if(error){
         console.log("error", error);
       }

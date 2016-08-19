@@ -90,7 +90,7 @@ Meteor.startup(() => {
 });//Meteor startup
 
 Meteor.methods({
-  'updateDB':function({clientIp,clientConnId}){
+  'updateDB':function({clientIp,clientConnId,clickedOne}){
       //     Ips.update(
       //     { "ipAdr": clientIp, "connections.connID": clientConnId},
       //     { "$push":
@@ -101,6 +101,10 @@ Meteor.methods({
       //         }
       //     }
       // )
+      // debugger;
+
+      console.log(clientIp);
+      console.log(clientConnId);
 
       Ips.findAndModify({
 
