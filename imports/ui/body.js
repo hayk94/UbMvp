@@ -33,18 +33,6 @@ Template.registerHelper("keyval",function(object){
   });
 });
 
-// Template.ip.onCreated(function () {
-//   console.log('created');
-//   $(function() {
-//     $(document).ready(function() {
-//       $('.conns').hide();
-//     });
-//
-//     });
-//   });
-
-
-
 Template.ip.events({
   "click .showHide": function(event, template){
     console.log('I log');
@@ -52,11 +40,6 @@ Template.ip.events({
     console.log(event.target);
     $(function() {
        // your jQuery code here...
-      //  console.log($(event.target));
-      //  console.log($(event.target).parent());
-      //  console.log($(event.target).parent().next('conns'));
-      //  console.log($(event.target).parent().next('conns').first());
-      // console.log($(event.target).siblings('conns'));
 
        $(event.target).next('.conns').toggle(500); //event.target is the event emitter
    });
@@ -64,10 +47,7 @@ Template.ip.events({
 
 });//Template.ip.events
 
-// Meteor.onConnection(function(c0nn){
-//    c0nnIp = c0nn.clientAddress;
-//    console.log(c0nnIp);
-// });
+
 
 Template.body.events({
   "click *": function(event, template){
@@ -77,31 +57,13 @@ Template.body.events({
      var clickedOne = $(event.target).html().toString();
      console.log('This click ' + clickedOne);
      //getting the connID
-    //  Meteor.call("getSessionId", function(err, id) {
-    //   return console.log(id);
-    // });
-    // Meteor.call("getIp", {}, function(error, result){
-    //   if(error){
-    //     console.log("error", error);
-    //   }
-    //   if(result){
-    //      console.log(result);
-    //      clientIp = result;
-    //   }
-    // });
+
     var clientIp = headers.getClientIP();
     var clientConnId = Meteor.connection._lastSessionId;
     console.log(clientIp);
     console.log(clientConnId);
 
-    // Ips.findAndModify({
-    //
-    //     //Find the desired document based on specified criteria
-    //     query: { "ipAdr": clientIp, connections: { $elemMatch: { connID: clientConnId}}},
-    //
-    //     //Update only the elements of the array where the specified criteria matches
-    //     update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
-    // });
+
 
     Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
       if(error){
@@ -112,14 +74,20 @@ Template.body.events({
       }
     });
 
+  }, // click *
+
+  //stopping the default link behavior, otherwise every link click is a new connection
+  "click a": function (event, template) {
+    event.preventDefault();
   }
 });
 
-// Template.ip.onCreated(function functionName() {
-// (function ($) {
-//   $('.showHide').click(function () {
-//     console.log('I log');
-//         $(this).parent().next('conns').first().toggle();
-//   });
-// })(jQuery);
-// });
+
+
+//routing
+FlowRouter.route('/test',{
+  name: 'testPost',
+  action: function (params) {
+    console.log('This is my blog post:', params.postId);
+  }
+});
