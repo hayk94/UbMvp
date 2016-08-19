@@ -23,8 +23,8 @@
       - [v] body template events * clicks
           - [v] stopPropagation
           - [v] send to db
-      *Got the click events in the db just now need to properly render them in templates*
-
+      <!-- *Got the click events in the db just now need to properly render them in templates* -->
+- [v] The ips are wrong
 
 *PROPER RENDERING*
   - [v] Proper Render
