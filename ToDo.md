@@ -25,6 +25,12 @@
           - [v] send to db
       <!-- *Got the click events in the db just now need to properly render them in templates* -->
 - [v] The ips are wrong
+      **CONSIDER too many intensive clicks make the app die**
 
 *PROPER RENDERING*
   - [v] Proper Render
+
+*RESEARCH THE FLOW ROUTER*
+    For the next 2 features we need a router so let's research it
+
+    - [ ] https://kadira.io/academy/meteor-routing-guide
