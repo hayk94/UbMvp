@@ -12,14 +12,14 @@ Template.body.helpers({
     return Tasks.find({});
   },
   conns(){
-    return Conns.find({},{ sort: { createdAt: -1 } });
+    return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
   },
   ips(){
     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
-    return Ips.find({},{sort: { createdAt: -1 } });
-      // XXX: //in stack overflow they say in order to show the
-      //whole collection as a string one should use publish and subscribe
-      // be sure to check that
+    return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
+
+    // return Ips.find({},{sort: { createdAt: -1 } });
+
 
   },
 });
