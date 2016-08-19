@@ -24,3 +24,7 @@
           - [v] stopPropagation
           - [v] send to db
       *Got the click events in the db just now need to properly render them in templates*
+
+
+*PROPER RENDERING*
+  - [ ] Proper Render
