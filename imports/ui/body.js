@@ -64,15 +64,30 @@ Template.ip.events({
 
 });//Template.ip.events
 
+// Meteor.onConnection(function(c0nn){
+//    c0nnIp = c0nn.clientAddress;
+//    console.log(c0nnIp);
+// });
+
 Template.body.events({
   "click *": function(event, template){
      event.stopPropagation();
      console.log('body all click log');
+    //  console.log(c0nnIp);
      var clickedOne = $(event.target).html().toString();
      console.log('This click ' + clickedOne);
      //getting the connID
     //  Meteor.call("getSessionId", function(err, id) {
     //   return console.log(id);
+    // });
+    // Meteor.call("getIp", {}, function(error, result){
+    //   if(error){
+    //     console.log("error", error);
+    //   }
+    //   if(result){
+    //      console.log(result);
+    //      clientIp = result;
+    //   }
     // });
     var clientIp = headers.getClientIP();
     var clientConnId = Meteor.connection._lastSessionId;

@@ -10,7 +10,7 @@ Meteor.startup(() => {
   // code to run on server at startup
   Meteor.onConnection(function(conn){
     var connID = conn.id ;
-    var ipAdr = conn.clientAddress ;
+    ipAdr = conn.clientAddress ;
     var realIP = conn.httpHeaders['x-real-ip'] ;
     console.log(connID);
     // console.log(this.connection.id) this returns error
@@ -105,14 +105,17 @@ Meteor.methods({
 
       console.log(clientIp);
       console.log(clientConnId);
-
+      console.log(ipAdr);
       Ips.findAndModify({
 
           //Find the desired document based on specified criteria
-          query: { "ipAdr": clientIp, connections: { $elemMatch: { connID: clientConnId}}},
+          query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: clientConnId}}},
 
           //Update only the elements of the array where the specified criteria matches
           update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
       });
-  }
+  },
+  // 'getIP': function () {
+  //     return this.connection.clientAddress;
+  // },
 });
