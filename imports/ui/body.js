@@ -66,7 +66,7 @@ Template.mainLayout.events({
      console.log('This click ' + clickedOne);
      //getting the connID
 
-    var clientIp = null // headers.getClientIP(); // no need for this anymore
+    var clientIp = headers.getClientIP(); // no need for this anymore
     var clientConnId = Meteor.connection._lastSessionId;
     console.log(clientIp);
     console.log(clientConnId);

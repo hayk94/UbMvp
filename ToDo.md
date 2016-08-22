@@ -35,4 +35,4 @@
 
     - [v] https://kadira.io/academy/meteor-routing-guide
     - [v] https://guide.meteor.com/routing.html
-    - [ ] test in nitrous
+    - [v] test in nitrous
