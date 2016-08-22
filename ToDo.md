@@ -33,5 +33,5 @@
 *RESEARCH THE FLOW ROUTER*
     For the next 2 features we need a router so let's research it
 
-    - [ ] https://kadira.io/academy/meteor-routing-guide
-    - [ ] https://guide.meteor.com/routing.html
+    - [v] https://kadira.io/academy/meteor-routing-guide
+    - [v] https://guide.meteor.com/routing.html
