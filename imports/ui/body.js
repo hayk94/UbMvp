@@ -7,24 +7,21 @@ import { Ips } from '../api/ips.js';
 
 import "./body.html";
 
-// Template.body.helpers({
-//   // tasks(){
-//   //   return Tasks.find({});
-//   // },
-//   // conns(){
-//   //   return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
-//   // },
-//   ips(){
-//     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
-//     return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
-//
-//     // return Ips.find({},{sort: { createdAt: -1 } });
-//   },
-// });
-FlowRouter.wait();
-Meteor.startup(function() {
-    FlowRouter.initialize({ hashbang: true });
+Template.body.helpers({
+  // tasks(){
+  //   return Tasks.find({});
+  // },
+  // conns(){
+  //   return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
+  // },
+  ips(){
+    // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
+    return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
+
+    // return Ips.find({},{sort: { createdAt: -1 } });
+  },
 });
+
 Template.ips.helpers({
   ips(){
     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
@@ -59,38 +56,61 @@ Template.ip.events({
 
 
 
-Template.body.events({
-  "click *": function(event, template){
-     event.stopPropagation();
-     console.log('body all click log');
-    //  console.log(c0nnIp);
-     var clickedOne = $(event.target).html().toString();
-     console.log('This click ' + clickedOne);
-     //getting the connID
+// Template.mainLayout.events({
+//   "click *": function(event, template){
+//      event.stopPropagation();
+//      console.log('body all click log');
+//     //  console.log(c0nnIp);
+//      var clickedOne = $(event.target).html().toString();
+//      console.log('This click ' + clickedOne);
+//      //getting the connID
+//
+//     var clientIp = null // headers.getClientIP(); // no need for this anymore
+//     var clientConnId = Meteor.connection._lastSessionId;
+//     console.log(clientIp);
+//     console.log(clientConnId);
+//
+//
+//
+//     Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
+//       if(error){
+//         console.log("error", error);
+//       }
+//       if(result){
+//
+//       }
+//     });
+//
+//   }, // click *
+// });//events
 
-    var clientIp = headers.getClientIP();
-    var clientConnId = Meteor.connection._lastSessionId;
-    console.log(clientIp);
-    console.log(clientConnId);
-
-
-
-    Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
-      if(error){
-        console.log("error", error);
-      }
-      if(result){
-
-      }
-    });
-
-  }, // click *
-
-  //stopping the default link behavior, otherwise every link click is a new connection
-  // "click a": function (event, template) {
-  //   event.preventDefault();
-  // }
-});
+// Template.body.events({
+//   "click *": function(event, template){
+//      event.stopPropagation();
+//      console.log('body all click log');
+//     //  console.log(c0nnIp);
+//      var clickedOne = $(event.target).html().toString();
+//      console.log('This click ' + clickedOne);
+//      //getting the connID
+//
+//     var clientIp = headers.getClientIP();
+//     var clientConnId = Meteor.connection._lastSessionId;
+//     console.log(clientIp);
+//     console.log(clientConnId);
+//
+//
+//
+//     Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
+//       if(error){
+//         console.log("error", error);
+//       }
+//       if(result){
+//
+//       }
+//     });
+//
+//   }, // click *
+// });//events
 
 
 
