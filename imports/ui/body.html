@@ -6,13 +6,8 @@
   </ul> -->
 
 
+    <!-- {{>mainLayout}} -->
 
-    <header>
-      <a href="/ips">ips</a>
-    </header>
-    <main>
-      {{>Template.dynamic template=content}}
-    </main>
     <!-- <h2>Connections</h2> -->
     <!-- {{#each conns}}
       {{> conn}}
@@ -22,6 +17,15 @@
     </pre> -->
 
 </body>
+
+<template name="mainLayout">
+  <header>
+    <a href="/ips">ips</a>
+  </header>
+  <main>
+    {{>Template.dynamic template=content}}
+  </main>
+</template>
 
 <template name="home">
   Welcome!

@@ -1,6 +1,6 @@
 FlowRouter.route('/',{
   action: function () {
-    BlazeLayout.render("body", {content: "home"});
+    BlazeLayout.render("mainLayout", {content: "home"});
   }
 });
 
@@ -11,6 +11,6 @@ FlowRouter.route('/',{
 // })
 FlowRouter.route('/ips',{
   action: function () {
-    BlazeLayout.render('body', {content:"ips"});
+    BlazeLayout.render('mainLayout', {content:"ips"});
   }
 })
