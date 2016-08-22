@@ -12,6 +12,8 @@ Meteor.startup(() => {
     var connID = conn.id ;
     ipAdr = conn.clientAddress ;
     var realIP = conn.httpHeaders['x-real-ip'] ;
+    //var firstVisited = FlowRouter.current(); //UNDEF
+    //console.log(firstVisited.path);
     console.log(connID);
     // console.log(this.connection.id) this returns error
 
@@ -48,6 +50,7 @@ Meteor.startup(() => {
             connectedAt: new Date(),
             disconnectedAt: null,
             clicks: Array(),
+            visits: Array(),
           }],//connections
           createdAt: new Date(),
         });//Ips.insert
@@ -67,6 +70,7 @@ Meteor.startup(() => {
           connectedAt: new Date(),
           disconnectedAt: null,
           clicks: Array(),
+          visits: Array(),
         }
       }});
 
@@ -118,7 +122,15 @@ Meteor.methods({
   // 'getIP': function () {
   //     return this.connection.clientAddress;
   // },
-  'updateHistory': function () {
+  'updateHistory': function ({clientIp,clientConnId,visitedOne}) {
+    console.log('UpdateHistory');
+    Ips.findAndModify({
 
+        //Find the desired document based on specified criteria
+        query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: clientConnId}}},
+
+        //Update only the elements of the array where the specified criteria matches
+        update: { $push: { 'connections.$.visits': {visitedThis: visitedOne, visitedAt: new Date()} }}
+    });
   },
 });

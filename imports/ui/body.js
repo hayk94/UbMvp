@@ -122,3 +122,38 @@ Template.mainLayout.events({
 //     console.log('This is my blog post:', params.postId);
 //   }
 // });
+
+// Template.onCreated(function () {
+//   console.log('dynamic tempa changed');
+//   console.log(window.location.href);
+// });
+
+Template.mainLayout.onCreated(function () {
+  // var currRoute = FlowRouter.current();
+  console.log("mainLayout created");
+  // console.log(currRoute.path);
+  var context = FlowRouter.current();
+  // use context to access the URL state
+  // console.log(window.location.href);
+  console.log(context);
+  // console.log(window.location.hash);
+  var visitedOne = context.path;
+  // console.log(window.location.href);
+  //getting the connID
+
+  var clientIp = headers.getClientIP(); // no need for this anymore
+  var clientConnId = Meteor.connection._lastSessionId;
+  console.log(clientIp);
+  console.log(clientConnId);
+
+
+
+  Meteor.call("updateHistory", {clientIp,clientConnId,visitedOne}, function(error, result){
+   if(error){
+     console.log("error", error);
+   }
+   if(result){
+
+   }
+  });//Meteor.call
+});
