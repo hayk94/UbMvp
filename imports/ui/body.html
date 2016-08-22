@@ -4,16 +4,12 @@
       {{> task}}
     {{/each}}
   </ul> -->
-  <ul>
-    <h1>IPS</h1>
-    <!-- {{#each ips}}
-      {{> ip}}
-    {{/each}} -->
-    <pre>
-      {{ips}}
-    </pre>
 
-    <a href="/test">test router</a>
+
+
+    <header>
+      <a href="/ips">ips</a>
+    </header>
     <main>
       {{>Template.dynamic template=content}}
     </main>
@@ -24,8 +20,24 @@
     <!-- <pre>
       {{conns}}
     </pre> -->
-  </ul>
+
 </body>
+
+<template name="home">
+  Welcome!
+</template>
+
+<template name="ips">
+  <a href="/">back</a>
+  <h1>IPS</h1>
+  <!-- {{#each ips}}
+    {{> ip}}
+  {{/each}} -->
+  <pre>
+    {{ips}}
+  </pre>
+
+</template>
 
 <template name="blogHome">
   <p>

@@ -7,20 +7,30 @@ import { Ips } from '../api/ips.js';
 
 import "./body.html";
 
-Template.body.helpers({
-  tasks(){
-    return Tasks.find({});
-  },
-  conns(){
-    return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
-  },
+// Template.body.helpers({
+//   // tasks(){
+//   //   return Tasks.find({});
+//   // },
+//   // conns(){
+//   //   return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
+//   // },
+//   ips(){
+//     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
+//     return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
+//
+//     // return Ips.find({},{sort: { createdAt: -1 } });
+//   },
+// });
+FlowRouter.wait();
+Meteor.startup(function() {
+    FlowRouter.initialize({ hashbang: true });
+});
+Template.ips.helpers({
   ips(){
     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
     return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
 
     // return Ips.find({},{sort: { createdAt: -1 } });
-
-
   },
 });
 
