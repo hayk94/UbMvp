@@ -36,3 +36,10 @@
     - [v] https://kadira.io/academy/meteor-routing-guide
     - [v] https://guide.meteor.com/routing.html
     - [v] test in nitrous
+
+
+**THIRD FEATURE**
+
+    - [ ] See what pages they attended and their order as a timeline.
+          - [ ] Add new field for attended pages in the db when it being created
+          - [ ] Add window.location.href to the db as the FlowRouter.route() is being executed
