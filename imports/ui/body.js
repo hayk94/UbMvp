@@ -58,7 +58,7 @@ Template.ip.events({
 
 Template.mainLayout.events({
   "click *": function(event, template){
-     event.stopPropagation();
+    //  event.stopPropagation();
      console.log('body all click log');
     //  console.log(c0nnIp);
      var clickedOne = $(event.target).html().toString();
