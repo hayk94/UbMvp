@@ -44,5 +44,5 @@
           - [v] Add new field for attended pages in the db when it being created
 #          - [ ] Add window.location.href to the db as the FlowRouter.route() is being executed
 
-    - [ ] add some more links
-    - [ ] Test in Nitrous io
+    - [v] add some more links
+    - [v] Test in Nitrous io
