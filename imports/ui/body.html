@@ -20,8 +20,10 @@
 
 <template name="mainLayout">
   <header>
-    <a href="/ips">ips</a> <br/>
-    <a href="/ui">UI</a>
+    <nav class="navbar">
+      <a class="nav-item" href="/ips">ips</a> <br/>
+      <a class="nav-item" href="/ui">UI</a>
+    </nav>
   </header>
   <main>
     {{>Template.dynamic template=content}}
@@ -73,7 +75,7 @@
             </p>
           </div>
       {{/each}}
-      </div>
+    </div>
       </div>
     {{/each}}
     <!-- connections -->
