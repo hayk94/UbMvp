@@ -15,7 +15,23 @@ FlowRouter.route('/ips',{
   action: function () {
     BlazeLayout.render('mainLayout', {content:"ips"});
   }
-})
+});
+
+FlowRouter.route('/111',{
+  // action: function () {
+  //   BlazeLayout.render('mainLayout', {content:"ips"});
+  // }
+});
+FlowRouter.route('/222',{
+  // action: function () {
+  //   BlazeLayout.render('mainLayout', {content:"ips"});
+  // }
+});
+FlowRouter.route('/333',{
+  // action: function () {
+  //   BlazeLayout.render('mainLayout', {content:"ips"});
+  // }
+});
 
 Tracker.autorun(function() {
     FlowRouter.watchPathChange();
