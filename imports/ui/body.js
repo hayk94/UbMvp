@@ -8,18 +8,7 @@ import { Ips } from '../api/ips.js';
 import "./body.html";
 
 Template.body.helpers({
-  // tasks(){
-  //   return Tasks.find({});
-  // },
-  // conns(){
-  //   return JSON.stringify(Conns.find({},{ sort: { createdAt: -1 } }),undefined,2);
-  // },
-  ips(){
-    // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
-    return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
 
-    // return Ips.find({},{sort: { createdAt: -1 } });
-  },
 });
 
 Template.ips.helpers({
@@ -30,6 +19,21 @@ Template.ips.helpers({
     // return Ips.find({},{sort: { createdAt: -1 } });
   },
 });
+
+//MAKING THE UI
+
+
+Template.ui.helpers({
+  ips(){
+     var Ips = Ips.find({},{sort: { createdAt: -1 } });
+    return Ips;
+    console.log(Ips);
+  },
+});
+
+
+
+//MAKING THE UI END
 
 Template.registerHelper("keyval",function(object){
   return _.map(object, function(value, key) {
@@ -103,7 +107,7 @@ Template.mainLayout.events({
 //
 //     Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
 //       if(error){
-//         console.log("error", error);
+//         console.log("erro/ipsr", error);
 //       }
 //       if(result){
 //

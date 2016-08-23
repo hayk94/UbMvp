@@ -17,21 +17,12 @@ FlowRouter.route('/ips',{
   }
 });
 
-FlowRouter.route('/111',{
-  // action: function () {
-  //   BlazeLayout.render('mainLayout', {content:"ips"});
-  // }
+FlowRouter.route('/ui',{
+  action: function () {
+    BlazeLayout.render('mainLayout', {content:"ui"});
+  }
 });
-FlowRouter.route('/222',{
-  // action: function () {
-  //   BlazeLayout.render('mainLayout', {content:"ips"});
-  // }
-});
-FlowRouter.route('/333',{
-  // action: function () {
-  //   BlazeLayout.render('mainLayout', {content:"ips"});
-  // }
-});
+
 
 Tracker.autorun(function() {
     FlowRouter.watchPathChange();
