@@ -31,7 +31,54 @@
 <template name="ui">
   <a href="/">Back</a>
   <h1>UI</h1>
-  {{ips}}
+  {{#each ips}}
+    <div>
+      <p>
+        <h2><strong>IP: </strong><span>{{ipAdr}}</span></h2>
+      </p>
+    </div>
+    {{#each connections}}
+      <div>
+        <h4>Connection</h4>
+        <p>
+          Started: {{connectedAt}}
+        </p>
+        <p>
+          {{#if disconnectedAt}}
+            Stoped: {{disconnectedAt}}
+            {{else}}
+            <span>ONLINE</span>
+          {{/if}}
+        </p>
+        <div>
+          <h4>User Visited Pages</h4>
+        {{#each visits}}
+            <div>
+              <p>
+                <strong>Visited Link :</strong> {{visitedThis}}
+              </p>
+              <p>
+                <strong>Visited At: </strong>{{visitedAt}}
+              </p>
+            </div>
+        {{/each}}
+        <h4>User Clicked On These</h4>
+      {{#each clicks}}
+          <div>
+            <p>
+              <strong>Clicked This :</strong> {{clickedThis}}
+            </p>
+            <p>
+              <strong>Clicked At: </strong>{{clickedAt}}
+            </p>
+          </div>
+      {{/each}}
+      </div>
+      </div>
+    {{/each}}
+    <!-- connections -->
+  {{/each}}
+  <!-- ips -->
 </template>
 
 <template name="home">

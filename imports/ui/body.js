@@ -25,9 +25,9 @@ Template.ips.helpers({
 
 Template.ui.helpers({
   ips(){
-     var Ips = Ips.find({},{sort: { createdAt: -1 } });
-    return Ips;
-    console.log(Ips);
+    //  var Ips =
+     console.log(Ips.find({},{sort: { createdAt: -1 } }));
+    return Ips.find({},{sort: { createdAt: -1 } });    
   },
 });
 
