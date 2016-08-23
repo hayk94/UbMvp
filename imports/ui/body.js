@@ -129,31 +129,35 @@ Template.mainLayout.events({
 // });
 
 Template.mainLayout.onCreated(function () {
-  // var currRoute = FlowRouter.current();
   console.log("mainLayout created");
-  // console.log(currRoute.path);
   var context = FlowRouter.current();
   // use context to access the URL state
-  // console.log(window.location.href);
   console.log(context);
-  // console.log(window.location.hash);
   var visitedOne = context.path;
-  // console.log(window.location.href);
+
   //getting the connID
-
+  var clientConnId;
   var clientIp = headers.getClientIP(); // no need for this anymore
-  var clientConnId = Meteor.connection._lastSessionId;
-  console.log(clientIp);
-  console.log(clientConnId);
+  var connIdInterval = Meteor.setInterval(function () {
+    console.log('interval');
+    if (Meteor.connection._lastSessionId) {
+      clientConnId = Meteor.connection._lastSessionId;
+      Meteor.clearInterval(connIdInterval);
+      console.log(clientIp);
+      console.log('clienetConnId', clientConnId);
+      // console.log(Meteor.connection._lastSessionId);
 
 
 
-  Meteor.call("updateHistory", {clientIp,clientConnId,visitedOne}, function(error, result){
-   if(error){
-     console.log("error", error);
-   }
-   if(result){
+      Meteor.call("updateHistory", {clientIp,clientConnId,visitedOne}, function(error, result){
+       if(error){
+         console.log("error", error);
+       }
+       if(result){
 
-   }
-  });//Meteor.call
+       }
+      });//Meteor.call
+    }
+  }, 300);
+
 });

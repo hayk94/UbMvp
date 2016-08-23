@@ -38,8 +38,10 @@
     - [v] test in nitrous
 
 
-**THIRD FEATURE**
+**THIRD FEATURE AND FOURTH FEATURE**
 
-    - [ ] See what pages they attended and their order as a timeline.
-          - [ ] Add new field for attended pages in the db when it being created
-          - [ ] Add window.location.href to the db as the FlowRouter.route() is being executed
+    - [v] See what pages they attended and their order as a timeline.
+          - [v] Add new field for attended pages in the db when it being created
+#          - [ ] Add window.location.href to the db as the FlowRouter.route() is being executed
+
+- [ ] Test in Nitrous io
