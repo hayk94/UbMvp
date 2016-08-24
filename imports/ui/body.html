@@ -21,8 +21,8 @@
 <template name="mainLayout">
   <header>
     <nav class="navbar">
-      <a class="nav-item btn btn-info" href="/ips">ips</a>
-      <a class="nav-item btn btn-info" href="/ui">UI</a>
+      <a class="nav-item btn btn-info link" href="/ips">ips</a>
+      <a class="nav-item btn btn-info link" href="/ui">UI</a>
     </nav>
   </header>
   <main>
@@ -33,7 +33,7 @@
 </template>
 
 <template name="ui">
-  <a class="btn btn-info" href="/">Back</a>
+  <a class="btn btn-info link" href="/">Back</a>
   <h1>UI</h1>
 
   {{#each ips}}
@@ -115,7 +115,7 @@
 </template>
 
 <template name="ips">
-  <a class="btn btn-info" href="/">back</a>
+  <a class="btn btn-info link" href="/">back</a>
   <h1>IPS</h1>
   <!-- {{#each ips}}
     {{> ip}}
@@ -137,7 +137,7 @@
 
 <template name="blogPost">
   <p>
-    <a href="/">Back</a> <br>
+    <a href="/" class="link">Back</a> <br>
     This is a sing blog post
   </p>
 </template>

@@ -27,7 +27,7 @@ Template.ui.helpers({
   ips(){
     //  var Ips =
      console.log(Ips.find({},{sort: { createdAt: -1 } }));
-    return Ips.find({},{sort: { createdAt: -1 } });    
+    return Ips.find({},{sort: { createdAt: -1 } });
   },
 });
 
@@ -62,6 +62,10 @@ Template.ip.events({
 
 Template.mainLayout.events({
   "click *": function(event, template){
+    // console.log($(event.target));
+    if ( !($(event.target).hasClass('link')) ) {
+      event.stopPropagation();
+    }
     //  event.stopPropagation();
     // console.log(ActiveRoute.path('/home'));
      console.log('body all click log');
