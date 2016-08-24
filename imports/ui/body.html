@@ -21,38 +21,48 @@
 <template name="mainLayout">
   <header>
     <nav class="navbar">
-      <a class="nav-item" href="/ips">ips</a> <br/>
-      <a class="nav-item" href="/ui">UI</a>
+      <a class="nav-item btn btn-info" href="/ips">ips</a>
+      <a class="nav-item btn btn-info" href="/ui">UI</a>
     </nav>
   </header>
   <main>
-    {{>Template.dynamic template=content}}
+    <div class="container">
+      {{>Template.dynamic template=content}}
+    </div>
   </main>
 </template>
 
 <template name="ui">
-  <a href="/">Back</a>
+  <a class="btn btn-info" href="/">Back</a>
   <h1>UI</h1>
+
   {{#each ips}}
-    <div>
+    <div class="jumbotron">
       <p>
         <h2><strong>IP: </strong><span>{{ipAdr}}</span></h2>
       </p>
     </div>
     {{#each connections}}
-      <div>
-        <h4>Connection</h4>
-        <p>
-          Started: {{connectedAt}}
-        </p>
-        <p>
-          {{#if disconnectedAt}}
-            Stoped: {{disconnectedAt}}
-            {{else}}
-            <span>ONLINE</span>
-          {{/if}}
-        </p>
-        <div>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 text-md-center text text-help">
+          <h2>Connection</h2>
+          <p>
+            <strong>Started:</strong> {{connectedAt}}
+          </p>
+          <p>
+            {{#if disconnectedAt}}
+              <strong>Stoped:</strong> {{disconnectedAt}}
+              {{else}}
+              <span class="label label-success">ONLINE</span>
+            {{/if}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-md-6">
           <h4>User Visited Pages</h4>
         {{#each visits}}
             <div>
@@ -64,31 +74,48 @@
               </p>
             </div>
         {{/each}}
-        <h4>User Clicked On These</h4>
-      {{#each clicks}}
-          <div>
-            <p>
-              <strong>Clicked This :</strong> {{clickedThis}}
-            </p>
-            <p>
-              <strong>Clicked At: </strong>{{clickedAt}}
-            </p>
           </div>
-      {{/each}}
-    </div>
+
+          <div class="col-md-6">
+            <h4>User Clicked On These</h4>
+            {{#if clicks}}
+
+
+                      {{#each clicks}}
+                          <div>
+                            <p>
+                              <strong>Clicked This :</strong> {{clickedThis}}
+                            </p>
+                            <p>
+                              <strong>Clicked At: </strong>{{clickedAt}}
+                            </p>
+                          </div>
+                      {{/each}}
+            {{else}}
+            <p class="text text-help">
+              User clicked on nothing yet
+            </p>
+          {{/if}}
+          </div>
+        </div>
       </div>
+    <hr>
+
     {{/each}}
     <!-- connections -->
   {{/each}}
   <!-- ips -->
+  <!-- row -->
 </template>
 
 <template name="home">
-  Welcome!
+  <div class="jumbotron">
+    <h1>Welcome!</h1>
+  </div>
 </template>
 
 <template name="ips">
-  <a href="/">back</a>
+  <a class="btn btn-info" href="/">back</a>
   <h1>IPS</h1>
   <!-- {{#each ips}}
     {{> ip}}
