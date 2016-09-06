@@ -113,7 +113,7 @@ Meteor.methods({
       Ips.findAndModify({
 
           //Find the desired document based on specified criteria
-          query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: clientConnId}}},
+          query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: connID}}},
 
           //Update only the elements of the array where the specified criteria matches
           update: { $push: { 'connections.$.clicks': {clickedThis: clickedOne, clickedAt: new Date()} }}
@@ -127,7 +127,7 @@ Meteor.methods({
     Ips.findAndModify({
 
         //Find the desired document based on specified criteria
-        query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: clientConnId}}},
+        query: { "ipAdr": ipAdr, connections: { $elemMatch: { connID: connID}}},
 
         //Update only the elements of the array where the specified criteria matches
         update: { $push: { 'connections.$.visits': {visitedThis: visitedOne, visitedAt: new Date()} }}
