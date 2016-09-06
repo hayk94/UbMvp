@@ -9,12 +9,12 @@ import { Ips } from '../imports/api/ips.js';
 Meteor.startup(() => {
   // code to run on server at startup
   Meteor.onConnection(function(conn){
-    var connID = conn.id ;
+    connID = conn.id ;
     ipAdr = conn.clientAddress ;
     var realIP = conn.httpHeaders['x-real-ip'] ;
     //var firstVisited = FlowRouter.current(); //UNDEF
     //console.log(firstVisited.path);
-    console.log(connID);
+    console.log('connID'.connID);
     // console.log(this.connection.id) this returns error
 
     //trying to send the connID to the client
