@@ -348,3 +348,10 @@ var ddp = new DDP(options);
 ddp.on("connected", function () {
     console.log("Connected");
 });
+
+
+// var myLoginParams = { ... };
+//   ddp.method("login", [myLoginParams], function (err, res) {
+//       if (err) throw err;
+//       console.log("Logged in!");
+//   });

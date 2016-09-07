@@ -1,9 +1,12 @@
+**- [ ] HUBSPOT INTEGRATION**
+        - [v] establish DDP connection
+        - [ ] Get the click events
+        - [ ] Get the history
 **MVP GOALS**
 - [v] Get a list of users who attended the site.
 - [v] See what links,buttons the user clicked.
-- [ ] See what pages they attended and their order as a timeline.
-- [ ] If the user is online see at what page he's now.
-
+- [v] See what pages they attended and their order as a timeline.
+- [v] If the user is online see at what page he's now.
 
 **FIRST FEATURE**
 
