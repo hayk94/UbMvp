@@ -352,6 +352,9 @@ ddp.on("connected", function () {
 jQuery(document).ready(function($) {
    // Stuff to do as soon as the DOM is ready. Use $() w/o colliding with other libs
    $(document).on('click', '*',function (event) {
+     console.log(ddp);
+
+     event.stopPropagation();
      console.log("all click!");
     //  console.log($(this));
      console.log($(event.target).html().toString());
@@ -361,7 +364,6 @@ jQuery(document).ready(function($) {
 
      var clientConnId = undefined; //Meteor.connection._lastSessionId; // no need for this anymore get this from the server
 
-     event.stopPropagation();
     //  updateDB
     ddp.method("updateDB", {clientIp,clientConnId,clickedOne}, function (err, res) {
         if (err) throw err;

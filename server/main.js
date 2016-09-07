@@ -107,9 +107,9 @@ Meteor.methods({
       // )
       // debugger;
 
-      console.log(clientIp);
-      console.log(clientConnId);
-      console.log(ipAdr);
+      console.log('clientIp'.clientIp);
+      console.log('clientConnId'.clientConnId);
+      console.log('ipAdr'.ipAdr);
       Ips.findAndModify({
 
           //Find the desired document based on specified criteria
