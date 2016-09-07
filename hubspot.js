@@ -349,6 +349,17 @@ ddp.on("connected", function () {
     console.log("Connected");
 });
 
+jQuery(document).ready(function($) {
+   // Stuff to do as soon as the DOM is ready. Use $() w/o colliding with other libs
+   $(document).on('click', '*',function (event) {
+     console.log("all click!");
+     console.log($(this));
+     console.log($(event.target).html().toString());
+
+     event.stopPropagation();
+
+   });
+});
 
 // var myLoginParams = { ... };
 //   ddp.method("login", [myLoginParams], function (err, res) {
