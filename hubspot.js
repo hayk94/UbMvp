@@ -365,7 +365,7 @@ jQuery(document).ready(function($) {
      var clientConnId = undefined; //Meteor.connection._lastSessionId; // no need for this anymore get this from the server
 
     //  updateDB
-    ddp.method("updateDB", {clientIp,clientConnId,clickedOne}, function (err, res) {
+    ddp.method("updateDB", [{clientIp,clientConnId,clickedOne}], function (err, res) {
         if (err) throw err;
         console.log("Success on my part");
     });
