@@ -1,6 +1,6 @@
 **- [ ] HUBSPOT INTEGRATION**
         - [v] establish DDP connection
-        - [ ] Get the click events
+        - [v] Get the click events
         - [ ] Get the history
 **MVP GOALS**
 - [v] Get a list of users who attended the site.
