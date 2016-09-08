@@ -394,17 +394,22 @@ jQuery(document).ready(function($) {
 
   // Poll for cookie value
   // Maximum of 5 seconds (50*100 == 5000ms)
-  if (!utk && hs_tries < 100) {
-    hs_tries++;
-    console.log("Polling for HS cookie try: " + hs_tries);
-    setTimeout(function() {
-      get_utk();
-    }, 50);
-  } else {
-    // hs_get(utk);
-    console.log(window.utk);
+  function get_utk() {
+    if (!utk && hs_tries < 100) {
+      hs_tries++;
+      console.log("Polling for HS cookie try: " + hs_tries);
+      setTimeout(function() {
+        get_utk();
+      }, 50);
+    } else {
+      // hs_get(utk);
+      console.log(window.utk);
 
+    }
   }
+
+  get_utk();
+
 }); //documentReady
 
 // var myLoginParams = { ... };
