@@ -1,7 +1,12 @@
-**- [ ] HUBSPOT INTEGRATION**
+**- [ ] HUBSPOT contact API**
+        - [v] Get UTK
+        - [ ] Get contact by UTK from HUBSPOT
+        - [ ] Store some contact info (aka first name, last name, email, UTK) in the DB
+        - [ ] If UTK already exists in our DB show its info
+**- [v] HUBSPOT INTEGRATION**
         - [v] establish DDP connection
         - [v] Get the click events
-        - [ ] Get the history
+        - [v] Get the history
 **MVP GOALS**
 - [v] Get a list of users who attended the site.
 - [v] See what links,buttons the user clicked.
@@ -16,7 +21,7 @@
             - [ V ] if yes then put all the connections under it
           <!-- - [  ] Create a db to save online connections -->
               <!-- - [  ] onClose remove the connection from this db -->
-                      *Let this be duplicate of the first db just remove the ones that has disconnectedAt or even simpler probably there is a way in monogoDb to filter them*
+                      *Let this be duplicate of the first db just remove the ones that has disconnectedAt or even simpler probably there is a way in mongoDb to filter them*
                       *I think there is no need for this now, since if the connection has no disconnectedAt then it means it is online,* **HOWEVER consider for later that when the server is being restarted and there are active connections they do not get disconnectedAt value**
 - [ V ] Print the info in the template
 
