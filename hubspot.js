@@ -362,22 +362,22 @@ jQuery(document).ready(function($) {
      event.stopPropagation();
      console.log("all click!");
     //  console.log($(this));
-     console.log($(event.target).html().toString());
-     var clickedOne = $(event.target).html().toString();
+     console.log($(event.target).html());
+     var clickedOne = $(event.target).html();
 
 
 
     //  updateDB
     ddp.method("updateDB", [{clientIp,clientConnId,clickedOne}], function (err, res) {
         if (err) throw err;
-        console.log("Success on my part");
+        console.log("Success on my part click!");
     });
   });//onClick
 
   //  updateHistory
   ddp.method("updateHistory", [{clientIp,clientConnId,visitedOne}], function (err, res) {
       if (err) throw err;
-      console.log("Success on my part");
+      console.log("Success on my part history");
   });
 
 });//documentReady
