@@ -122,153 +122,154 @@ Meteor.startup(() => {
       });
     }); //onClose
 
+    //METEOR METHODS
+    Meteor.methods({
+      'updateDB': function({
+        clientIp, clientConnId, clickedOne
+      }) {
+        //     Ips.update(
+        //     { "ipAdr": clientIp, "connections.connID": clientConnId},
+        //     { "$push":
+        //         {"connections.$.clicks":
+        //             {
+        //                 'clickedThis': clickedOne, 'clickedAt': new Date(),
+        //             }
+        //         }
+        //     }
+        // )
+        // debugger;
 
-  }); // Meteor onConnection
-}); //Meteor startup
+        console.log('clientIp'.clientIp);
+        console.log('clientConnId'.clientConnId);
+        console.log('ipAdr'.ipAdr);
+        clientConnId = conn.id;
+        console.log('clientConnId', clientConnId);
+        Ips.findAndModify({
 
-Meteor.methods({
-  'updateDB': function({
-    clientIp, clientConnId, clickedOne
-  }) {
-    //     Ips.update(
-    //     { "ipAdr": clientIp, "connections.connID": clientConnId},
-    //     { "$push":
-    //         {"connections.$.clicks":
-    //             {
-    //                 'clickedThis': clickedOne, 'clickedAt': new Date(),
-    //             }
-    //         }
-    //     }
-    // )
-    // debugger;
+          //Find the desired document based on specified criteria
+          query: {
+            "ipAdr": ipAdr,
+            connections: {
+              $elemMatch: {
+                connID: clientConnId
+              }
+            }
+          },
 
-    console.log('clientIp'.clientIp);
-    console.log('clientConnId'.clientConnId);
-    console.log('ipAdr'.ipAdr);
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
-    Ips.findAndModify({
-
-      //Find the desired document based on specified criteria
-      query: {
-        "ipAdr": ipAdr,
-        connections: {
-          $elemMatch: {
-            connID: clientConnId
+          //Update only the elements of the array where the specified criteria matches
+          update: {
+            $push: {
+              'connections.$.clicks': {
+                clickedThis: clickedOne,
+                clickedAt: new Date()
+              }
+            }
           }
-        }
+        });
       },
+      // 'getIP': function () {
+      //     return this.connection.clientAddress;
+      // },
+      'updateHistory': function({
+        clientIp, clientConnId, visitedOne
+      }) {
+        clientConnId = conn.id;
+        console.log('clientConnId', clientConnId);
+        console.log('UpdateHistory');
+        Ips.findAndModify({
 
-      //Update only the elements of the array where the specified criteria matches
-      update: {
-        $push: {
-          'connections.$.clicks': {
-            clickedThis: clickedOne,
-            clickedAt: new Date()
+          //Find the desired document based on specified criteria
+          query: {
+            "ipAdr": ipAdr,
+            connections: {
+              $elemMatch: {
+                connID: clientConnId
+              }
+            }
+          },
+
+          //Update only the elements of the array where the specified criteria matches
+          update: {
+            $push: {
+              'connections.$.visits': {
+                visitedThis: visitedOne,
+                visitedAt: new Date()
+              }
+            }
           }
-        }
-      }
-    });
-  },
-  // 'getIP': function () {
-  //     return this.connection.clientAddress;
-  // },
-  'updateHistory': function({
-    clientIp, clientConnId, visitedOne
-  }) {
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
-    console.log('UpdateHistory');
-    Ips.findAndModify({
+        });
+      }, //updateHistory
 
-      //Find the desired document based on specified criteria
-      query: {
-        "ipAdr": ipAdr,
-        connections: {
-          $elemMatch: {
-            connID: clientConnId
+      'pushHubspotInfo': function({
+        UTK, result
+      }) {
+        console.log('pushHubspotInfo');
+        clientConnId = conn.id;
+        console.log('clientConnId', clientConnId);
+
+
+
+        Ips.findAndModify({
+
+          //Find the desired document based on specified criteria
+          query: {
+            "ipAdr": ipAdr,
+            connections: {
+              $elemMatch: {
+                connID: clientConnId
+              }
+            }
+          },
+
+          //Update only the elements of the array where the specified criteria matches
+          update: {
+            $push: {
+              'connections.$.hubspotInfo': {
+                UTK: UTK,
+                result: result
+              }
+            }
           }
-        }
-      },
-
-      //Update only the elements of the array where the specified criteria matches
-      update: {
-        $push: {
-          'connections.$.visits': {
-            visitedThis: visitedOne,
-            visitedAt: new Date()
-          }
-        }
-      }
-    });
-  }, //updateHistory
-
-  'pushHubspotInfo': function({
-    UTK, result
-  }) {
-    console.log('pushHubspotInfo');
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
+        }); //Ips.findAndModify
+      }, //pushHubspotInfo
 
 
+      'getHubspotInfo': function({
+        clientIp, clientConnId, UTK
+      }) {
+        clientConnId = conn.id;
+        console.log('clientConnId', clientConnId);
+        console.log('getHubspotInfo');
 
-    Ips.findAndModify({
+        var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
+        var url =
+          "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
+          "/profile?hapikey=" + hapikey;
 
-      //Find the desired document based on specified criteria
-      query: {
-        "ipAdr": ipAdr,
-        connections: {
-          $elemMatch: {
-            connID: clientConnId
-          }
-        }
-      },
-
-      //Update only the elements of the array where the specified criteria matches
-      update: {
-        $push: {
-          'connections.$.hubspotInfo': {
-            UTK: UTK,
-            result: result
-          }
-        }
-      }
-    }); //Ips.findAndModify
-  }, //pushHubspotInfo
-
-
-  'getHubspotInfo': function({
-    clientIp, clientConnId, UTK
-  }) {
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
-    console.log('getHubspotInfo');
-
-    var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
-    var url = "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
-      "/profile?hapikey=" + hapikey;
-
-    HTTP.call("GET", url, function(error, result) {
-      if (error) {
-        console.log("error", error);
-      }
-      if (result) {
-        console.log("result", result);
-        Meteor.call("pushHubspotInfo", {
-          UTK, result
-        }, function(error, result) {
+        HTTP.call("GET", url, function(error, result) {
           if (error) {
             console.log("error", error);
           }
           if (result) {
+            console.log("result", result);
+            Meteor.call("pushHubspotInfo", {
+              UTK, result
+            }, function(error, result) {
+              if (error) {
+                console.log("error", error);
+              }
+              if (result) {
 
+              }
+            });
           }
-        });
-      }
-    }); //Http.call
+        }); //Http.call
 
-  }, //getHubspotInfo
-}); // Meteor Methods
+      }, //getHubspotInfo
+    }); // Meteor Methods
+  }); // Meteor onConnection
+}); //Meteor startup
+
 
 
 //////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////
