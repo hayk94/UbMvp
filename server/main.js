@@ -145,6 +145,8 @@ Meteor.methods({
     console.log('clientIp'.clientIp);
     console.log('clientConnId'.clientConnId);
     console.log('ipAdr'.ipAdr);
+    clientConnId = Meteor.connection._lastSessionId;
+    console.log('clientConnId', clientConnId);
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
@@ -174,6 +176,8 @@ Meteor.methods({
   'updateHistory': function({
     clientIp, clientConnId, visitedOne
   }) {
+    clientConnId = Meteor.connection._lastSessionId;
+    console.log('clientConnId', clientConnId);
     console.log('UpdateHistory');
     Ips.findAndModify({
 
@@ -203,6 +207,8 @@ Meteor.methods({
     UTK, result
   }) {
     console.log('pushHubspotInfo');
+    clientConnId = Meteor.connection._lastSessionId;
+    console.log('clientConnId', clientConnId);
 
 
 
@@ -213,7 +219,7 @@ Meteor.methods({
         "ipAdr": ipAdr,
         connections: {
           $elemMatch: {
-            connID: connID
+            connID: clientConnId
           }
         }
       },
@@ -234,6 +240,8 @@ Meteor.methods({
   'getHubspotInfo': function({
     clientIp, clientConnId, UTK
   }) {
+    clientConnId = Meteor.connection._lastSessionId;
+    console.log('clientConnId', clientConnId);
     console.log('getHubspotInfo');
 
     var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
