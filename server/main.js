@@ -193,10 +193,14 @@ Meteor.methods({
       }
     });
   }, //updateHistory
+
   'pushHubspotInfo': function({
     clientIp, clientConnId, UTK, firstName, lastName, email
   }) {
     console.log('pushHubspotInfo');
+
+
+
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
@@ -220,6 +224,34 @@ Meteor.methods({
           }
         }
       }
-    });
-  }, //updateHistory
+    }); //Ips.findAndModify
+  }, //pushHubspotInfo
+
+
+  'getHubspotInfo': function({
+    clientIp, clientConnId, UTK
+  }) {
+    console.log('getHubspotInfo');
+
+    var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // // XXX: This is set for testing purposes otherwise it should be set from somewhere else
+    var url = "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
+      "/profile?hapikey=" + hapikey;
+
+    HTTP.call("GET", url, function(error, result) {
+      if (error) {
+        console.log("error", error);
+      }
+      if (result) {
+        console.log("result", result);
+      }
+    }); //Http.call
+
+  }, //getHubspotInfo
 }); // Meteor Methods
+
+
+//////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////
+// random contact id 3036763
+//url: 'https://api.hubapi.com/contacts/v1/lists/recently_updated/contacts/recent?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063'
+//get by utk url: https://api.hubapi.com/contacts/v1/contact/utk/37782b7ceb743281d6d2872e9ebfd3be/profile?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063
+//////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////

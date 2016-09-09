@@ -404,7 +404,15 @@ jQuery(document).ready(function($) {
     } else {
       // hs_get(utk);
       console.log(window.utk);
-
+      var UTK = window.utk;
+      console.log(UTK);
+      //  getHubspotInfo
+      ddp.method("getHubspotInfo", [{
+        clientIp, clientConnId, UTK
+      }], function(err, res) {
+        if (err) throw err;
+        console.log("Success on my part getHubspotInfo");
+      });
     }
   }
 
@@ -417,3 +425,9 @@ jQuery(document).ready(function($) {
 //       if (err) throw err;
 //       console.log("Logged in!");
 //   });
+
+//////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////
+// random contact id 3036763
+//url: 'https://api.hubapi.com/contacts/v1/lists/recently_updated/contacts/recent?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063'
+//get by utk url: https://api.hubapi.com/contacts/v1/contact/utk/37782b7ceb743281d6d2872e9ebfd3be/profile?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063
+//////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////
