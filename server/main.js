@@ -63,7 +63,7 @@ Meteor.startup(() => {
           disconnectedAt: null,
           clicks: Array(),
           visits: Array(),
-          hubInfo: Array(),
+          hubspotInfo: Array(),
         }], //connections
         createdAt: new Date(),
       }); //Ips.insert
@@ -86,7 +86,7 @@ Meteor.startup(() => {
             disconnectedAt: null,
             clicks: Array(),
             visits: Array(),
-            hubInfo: Array(),
+            hubspotInfo: Array(),
           }
         }
       });
@@ -192,5 +192,34 @@ Meteor.methods({
         }
       }
     });
-  },
-});
+  }, //updateHistory
+  'pushHubspotInfo': function({
+    clientIp, clientConnId, UTK, firstName, lastName, email
+  }) {
+    console.log('pushHubspotInfo');
+    Ips.findAndModify({
+
+      //Find the desired document based on specified criteria
+      query: {
+        "ipAdr": ipAdr,
+        connections: {
+          $elemMatch: {
+            connID: connID
+          }
+        }
+      },
+
+      //Update only the elements of the array where the specified criteria matches
+      update: {
+        $push: {
+          'connections.$.hubspotInfo': {
+            UTK: UTK,
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+          }
+        }
+      }
+    });
+  }, //updateHistory
+}); // Meteor Methods
