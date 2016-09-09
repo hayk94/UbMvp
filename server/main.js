@@ -68,7 +68,7 @@ Meteor.startup(() => {
           disconnectedAt: null,
           clicks: Array(),
           visits: Array(),
-          hubspotInfo: {},
+          hubspotInfo: Array(),
         }], //connections
         createdAt: new Date(),
       }); //Ips.insert
@@ -91,7 +91,7 @@ Meteor.startup(() => {
             disconnectedAt: null,
             clicks: Array(),
             visits: Array(),
-            hubspotInfo: {},
+            hubspotInfo: Array(),
           }
         }
       });
