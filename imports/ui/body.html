@@ -50,7 +50,20 @@
           <h2>Connection</h2>
           <p>
             <p>
-              <strong>{{hubspotInfo.result.data.properties.firstname.value}} </strong>
+              <strong>
+                {{#each hubspotInfo}}
+                {{#each result}}
+                {{#each data}}
+                {{#each properties}}
+                {{#each firstname}}
+                  {{value}}
+                {{/each}}
+                {{/each}}
+                {{/each}}
+                {{/each}}
+                {{/each}}
+                {{hubspotInfo.result.data.properties.firstname.value}}
+               </strong>
               <strong>{{hubspotInfo.result.data.properties.lastname.value}}</strong>
             </p>
             <p>
