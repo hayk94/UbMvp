@@ -247,7 +247,7 @@ Meteor.methods({
         console.log("error", error);
       }
       if (result) {
-        console.log("result", result);
+        console.log("result", result.content);
       }
     }); //Http.call
 
