@@ -182,7 +182,7 @@ Meteor.methods({
         "ipAdr": ipAdr,
         connections: {
           $elemMatch: {
-            connID: connID
+            connID: clientConnId
           }
         }
       },
