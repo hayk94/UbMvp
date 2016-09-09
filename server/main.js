@@ -68,7 +68,7 @@ Meteor.startup(() => {
           disconnectedAt: null,
           clicks: Array(),
           visits: Array(),
-          hubspotInfo: Array(),
+          hubspotInfo: {},
         }], //connections
         createdAt: new Date(),
       }); //Ips.insert
@@ -91,7 +91,7 @@ Meteor.startup(() => {
             disconnectedAt: null,
             clicks: Array(),
             visits: Array(),
-            hubspotInfo: Array(),
+            hubspotInfo: {},
           }
         }
       });
@@ -200,7 +200,7 @@ Meteor.methods({
   }, //updateHistory
 
   'pushHubspotInfo': function({
-    clientIp, clientConnId, UTK, firstName, lastName, email
+    UTK, result
   }) {
     console.log('pushHubspotInfo');
 
@@ -223,9 +223,7 @@ Meteor.methods({
         $push: {
           'connections.$.hubspotInfo': {
             UTK: UTK,
-            firstName: firstName,
-            lastName: lastName,
-            email: email
+            result: result
           }
         }
       }
@@ -238,7 +236,7 @@ Meteor.methods({
   }) {
     console.log('getHubspotInfo');
 
-    var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // // XXX: This is set for testing purposes otherwise it should be set from somewhere else
+    var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
     var url = "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
       "/profile?hapikey=" + hapikey;
 
@@ -247,7 +245,17 @@ Meteor.methods({
         console.log("error", error);
       }
       if (result) {
-        console.log("result", result.content);
+        console.log("result", result);
+        Meteor.call("pushHubspotInfo", {
+          UTK, result
+        }, function(error, result) {
+          if (error) {
+            console.log("error", error);
+          }
+          if (result) {
+
+          }
+        });
       }
     }); //Http.call
 
