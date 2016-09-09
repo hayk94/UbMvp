@@ -1,6 +1,7 @@
 **- [ ] HUBSPOT contact API**
         - [v] Get UTK
         - [ ] Sent UTK to my server and add to the DB
+              - [ ] Add the UTK, first name,last name,email fields in the initial DB creation in the server *OR RESEARCH HOW TO ADD NEW FIELDS AFTER THE DB CREATION* 
         - [ ] Sent a http GET request to HUBSPOT from METEOR to get the contact by UTK
         - [ ] Store some contact info (aka first name, last name, email) in the DB
         - [ ] If UTK already exists in our DB show its info
