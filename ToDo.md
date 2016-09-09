@@ -1,7 +1,8 @@
 **- [ ] HUBSPOT contact API**
         - [v] Get UTK
-        - [ ] Get contact by UTK from HUBSPOT
-        - [ ] Store some contact info (aka first name, last name, email, UTK) in the DB
+        - [ ] Sent UTK to my server and add to the DB
+        - [ ] Sent a http GET request to HUBSPOT from METEOR to get the contact by UTK
+        - [ ] Store some contact info (aka first name, last name, email) in the DB
         - [ ] If UTK already exists in our DB show its info
 **- [v] HUBSPOT INTEGRATION**
         - [v] establish DDP connection
