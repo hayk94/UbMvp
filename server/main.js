@@ -3,6 +3,11 @@ import {
 }
 from 'meteor/meteor';
 
+import {
+  HTTP
+}
+from 'meteor/http';
+
 import '../imports/api/tasks.js';
 import {
   Conns
