@@ -249,6 +249,7 @@ Meteor.methods({
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
     console.log('getHubspotInfo');
+    console.log("getHubspotInfo outside HTTP clientConnId", clientConnId);
     clientIp = this.connection.clientAddress;
     var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
     var url = "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
@@ -260,7 +261,8 @@ Meteor.methods({
       }
       if (result) {
         console.log("result", result);
-        console.log("getHubspotInfo clientConnId", clientConnId);
+        console.log("getHubspotInfo inside HTTP clientConnId",
+          clientConnId);
         Meteor.call("pushHubspotInfo", {
           clientConnId, UTK, result
         }, function(error, result) {
