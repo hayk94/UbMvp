@@ -377,15 +377,6 @@ jQuery(document).ready(function($) {
     });
   }); //onClick
 
-  //  updateHistory
-  ddp.method("updateHistory", [{
-    clientIp, clientConnId, visitedOne
-  }], function(err, res) {
-    if (err) throw err;
-    console.log("UPDATE HISTORY clientIp", clientIp, "clientConnId",
-      clientConnId, "visitedOne", visitedOne);
-    console.log("Success on my part history");
-  });
 
   // GETTING THE HUBSPOT USER TOKEN aka UTK
   var hs_tries = 0,
@@ -431,6 +422,17 @@ jQuery(document).ready(function($) {
       clientConnId = ddp.sessionId;
       console.log("ddp.sessionId = ", ddp.sessionId);
       console.log("clientConnId = ", clientConnId);
+
+      //  updateHistory
+      ddp.method("updateHistory", [{
+        clientIp, clientConnId, visitedOne
+      }], function(err, res) {
+        if (err) throw err;
+        console.log("UPDATE HISTORY clientIp", clientIp, "clientConnId",
+          clientConnId, "visitedOne", visitedOne);
+        console.log("Success on my part history");
+      });
+
     }
   }
   get_utk();
