@@ -51,7 +51,19 @@
           <p>
             <p>
               <strong>
-                {{hubspotInfo.result.data.properties.firstname.value}}
+                {{#with hubspotInfo}}
+                {{#with result}}
+                {{#with data}}
+                {{#with properties}}
+                {{#with firstname}}
+                {{#with value}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                <!-- {{hubspotInfo.result.data.properties.firstname.value}} -->
                </strong>
               <strong>{{hubspotInfo.result.data.properties.lastname.value}}</strong>
             </p>
