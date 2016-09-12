@@ -145,6 +145,7 @@ Meteor.methods({
     console.log('clientIp'.clientIp);
     console.log('clientConnId'.clientConnId);
     console.log('ipAdr'.ipAdr);
+    console.log("THE IP ", this.connection.clientAddress);
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
     Ips.findAndModify({
@@ -180,6 +181,7 @@ Meteor.methods({
     // console.log('clientConnId', clientConnId);
     console.log('UpdateHistory clientConnId', clientConnId, "visitedOne",
       visitedOne);
+    console.log("THE IP ", this.connection.clientAddress);
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria

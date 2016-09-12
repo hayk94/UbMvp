@@ -101,7 +101,7 @@ Template.mainLayout.events({
     console.log('This click ' + clickedOne);
     //getting the connID
 
-    var clientIp = headers.getClientIP(); // no need for this anymore
+    var clientIp = headers.getClientIP(); // this is needed indeed however it gets the proxy ip
     var clientConnId = Meteor.connection._lastSessionId;
     console.log("clientIp", clientIp);
     console.log('clientConnId'.clientConnId);
