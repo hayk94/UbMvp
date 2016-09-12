@@ -178,7 +178,8 @@ Meteor.methods({
   }) {
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
-    console.log('UpdateHistory');
+    console.log('UpdateHistory clientConnId', clientConnId, "visitedOne",
+      visitedOne);
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
