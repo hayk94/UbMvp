@@ -142,9 +142,9 @@ Meteor.methods({
     // )
     // debugger;
     clientIp = this.connection.clientAddress;
-    console.log('clientIp'.clientIp);
-    console.log('clientConnId'.clientConnId);
-    console.log('ipAdr'.ipAdr);
+    console.log('clientIp', clientIp);
+    console.log('clientConnId', clientConnId);
+    console.log('ipAdr', ipAdr);
     console.log("THE IP ", this.connection.clientAddress);
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
