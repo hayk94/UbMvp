@@ -98,14 +98,14 @@ Meteor.startup(() => {
 
     } //else
 
-    conn.onClose(function() {
+    conn.onClose(function(conn) {
       console.log('connection closed');
       //findAndModify will always refer to one document
       Ips.findAndModify({
 
         //Find the desired document based on specified criteria
         query: {
-          "ipAdr": ipAdr,
+          "ipAdr": conn.clientAddress,
           connections: {
             $elemMatch: {
               connID: conn.id
