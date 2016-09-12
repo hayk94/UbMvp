@@ -399,15 +399,9 @@ jQuery(document).ready(function($) {
     } else {
       // hs_get(utk);
       console.log(window.utk);
-      var UTK = window.utk;
+      UTK = window.utk;
       console.log("UTK", UTK);
-      //  getHubspotInfo
-      ddp.method("getHubspotInfo", [{
-        clientIp, clientConnId, UTK
-      }], function(err, res) {
-        if (err) throw err;
-        console.log("Success on my part getHubspotInfo");
-      });
+
     }
   }
 
@@ -423,6 +417,29 @@ jQuery(document).ready(function($) {
       console.log("ddp.sessionId = ", ddp.sessionId);
       console.log("clientConnId = ", clientConnId);
 
+
+
+    }
+  }
+  get_utk();
+  get_connId();
+
+
+  console.log("ddp.sessionId = ", ddp.sessionId);
+
+  //Let's call the methods after making sure everything is there
+  function callInitialMethods() {
+    console.log("EVERYTHIN WE NEED IS clientConnId ", clientConnId,
+      " AND utk ", UTK);
+    if (clientConnId) {
+      //  getHubspotInfo
+      ddp.method("getHubspotInfo", [{
+        clientIp, clientConnId, UTK
+      }], function(err, res) {
+        if (err) throw err;
+        console.log("Success on my part getHubspotInfo");
+      });
+
       //  updateHistory
       ddp.method("updateHistory", [{
         clientIp, clientConnId, visitedOne
@@ -432,14 +449,14 @@ jQuery(document).ready(function($) {
           clientConnId, "visitedOne", visitedOne);
         console.log("Success on my part history");
       });
-
+    } else {
+      setTimeout(function() {
+        callInitialMethods();
+      }, 50);
     }
-  }
-  get_utk();
-  get_connId();
+  } //callInitialMethods
 
-
-  console.log("ddp.sessionId = ", ddp.sessionId);
+  callInitialMethods();
 
 }); //documentReady
 
