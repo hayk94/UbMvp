@@ -1,9 +1,24 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
+import {
+  Meteor
+}
+from 'meteor/meteor';
+import {
+  Template
+}
+from 'meteor/templating';
 
-import { Tasks } from '../api/tasks.js';
-import { Conns } from '../api/conns.js';
-import { Ips } from '../api/ips.js';
+import {
+  Tasks
+}
+from '../api/tasks.js';
+import {
+  Conns
+}
+from '../api/conns.js';
+import {
+  Ips
+}
+from '../api/ips.js';
 
 import "./body.html";
 
@@ -12,9 +27,13 @@ Template.body.helpers({
 });
 
 Template.ips.helpers({
-  ips(){
+  ips() {
     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
-    return JSON.stringify(Ips.find({},{sort: { createdAt: -1 } }).fetch(),undefined,2);
+    return JSON.stringify(Ips.find({}, {
+      sort: {
+        createdAt: -1
+      }
+    }).fetch(), undefined, 2);
 
     // return Ips.find({},{sort: { createdAt: -1 } });
   },
@@ -24,10 +43,18 @@ Template.ips.helpers({
 
 
 Template.ui.helpers({
-  ips(){
+  ips() {
     //  var Ips =
-     console.log(Ips.find({},{sort: { createdAt: -1 } }));
-    return Ips.find({},{sort: { createdAt: -1 } });
+    console.log(Ips.find({}, {
+      sort: {
+        createdAt: -1
+      }
+    }));
+    return Ips.find({}, {
+      sort: {
+        createdAt: -1
+      }
+    });
   },
 });
 
@@ -35,7 +62,7 @@ Template.ui.helpers({
 
 //MAKING THE UI END
 
-Template.registerHelper("keyval",function(object){
+Template.registerHelper("keyval", function(object) {
   return _.map(object, function(value, key) {
     return {
       key: key,
@@ -45,53 +72,55 @@ Template.registerHelper("keyval",function(object){
 });
 
 Template.ip.events({
-  "click .showHide": function(event, template){
-    console.log('I log');
-    // console.log($(this));// this is the whole template
-    console.log(event.target);
-    $(function() {
-       // your jQuery code here...
+  "click .showHide": function(event, template) {
+      console.log('I log');
+      // console.log($(this));// this is the whole template
+      console.log(event.target);
+      $(function() {
+        // your jQuery code here...
 
-       $(event.target).next('.conns').toggle(500); //event.target is the event emitter
-   });
- }//.showHide clicks
+        $(event.target).next('.conns').toggle(500); //event.target is the event emitter
+      });
+    } //.showHide clicks
 
-});//Template.ip.events
+}); //Template.ip.events
 
 
 
 Template.mainLayout.events({
-  "click *": function(event, template){
+  "click *": function(event, template) {
     // console.log($(event.target));
-    if ( !($(event.target).hasClass('link')) ) {
+    if (!($(event.target).hasClass('link'))) {
       event.stopPropagation();
     }
     //  event.stopPropagation();
     // console.log(ActiveRoute.path('/home'));
-     console.log('body all click log');
+    console.log('body all click log');
     //  console.log(c0nnIp);
-     var clickedOne = $(event.target).html().toString();
-     console.log('This click ' + clickedOne);
-     //getting the connID
+    var clickedOne = $(event.target).html().toString();
+    console.log('This click ' + clickedOne);
+    //getting the connID
 
     var clientIp = headers.getClientIP(); // no need for this anymore
     var clientConnId = Meteor.connection._lastSessionId;
-    console.log(clientIp);
+    console.log("clientIp", clientIp);
     console.log('clientConnId'.clientConnId);
 
 
 
-    Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
-      if(error){
+    Meteor.call("updateDB", {
+      clientIp, clientConnId, clickedOne
+    }, function(error, result) {
+      if (error) {
         console.log("error", error);
       }
-      if(result){
+      if (result) {
 
       }
     });
 
   }, // click *
-});//events
+}); //events
 
 // Template.body.events({
 //   "click *": function(event, template){
@@ -136,7 +165,7 @@ Template.mainLayout.events({
 //   console.log(window.location.href);
 // });
 
-Template.mainLayout.onCreated(function () {
+Template.mainLayout.onCreated(function() {
   console.log("mainLayout created");
   var context = FlowRouter.current();
   // use context to access the URL state
@@ -146,7 +175,7 @@ Template.mainLayout.onCreated(function () {
   //getting the connID
   var clientConnId;
   var clientIp = headers.getClientIP(); // no need for this anymore
-  var connIdInterval = Meteor.setInterval(function () {
+  var connIdInterval = Meteor.setInterval(function() {
     console.log('interval');
     if (Meteor.connection._lastSessionId) {
       clientConnId = Meteor.connection._lastSessionId;
@@ -157,14 +186,16 @@ Template.mainLayout.onCreated(function () {
 
 
 
-      Meteor.call("updateHistory", {clientIp,clientConnId,visitedOne}, function(error, result){
-       if(error){
-         console.log("error", error);
-       }
-       if(result){
+      Meteor.call("updateHistory", {
+        clientIp, clientConnId, visitedOne
+      }, function(error, result) {
+        if (error) {
+          console.log("error", error);
+        }
+        if (result) {
 
-       }
-      });//Meteor.call
+        }
+      }); //Meteor.call
     }
   }, 300);
 
