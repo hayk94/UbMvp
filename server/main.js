@@ -208,7 +208,7 @@ Meteor.methods({
   }, //updateHistory
 
   'pushHubspotInfo': function({
-    UTK, result
+    clientConnId, UTK, result
   }) {
     console.log('pushHubspotInfo');
     // clientConnId = Meteor.connection._lastSessionId;
@@ -260,7 +260,7 @@ Meteor.methods({
       if (result) {
         console.log("result", result);
         Meteor.call("pushHubspotInfo", {
-          UTK, result
+          clientConnId, UTK, result
         }, function(error, result) {
           if (error) {
             console.log("error", error);
