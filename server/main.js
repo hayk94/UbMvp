@@ -141,7 +141,7 @@ Meteor.methods({
     //     }
     // )
     // debugger;
-
+    clientIp = this.connection.clientAddress;
     console.log('clientIp'.clientIp);
     console.log('clientConnId'.clientConnId);
     console.log('ipAdr'.ipAdr);
@@ -152,7 +152,7 @@ Meteor.methods({
 
       //Find the desired document based on specified criteria
       query: {
-        "ipAdr": ipAdr,
+        "ipAdr": clientIp,
         connections: {
           $elemMatch: {
             connID: clientConnId
@@ -179,14 +179,15 @@ Meteor.methods({
   }) {
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
+    clientIp = this.connection.clientAddress;
     console.log('UpdateHistory clientConnId', clientConnId, "visitedOne",
-      visitedOne);
+      visitedOne, "clientIp", clientIp);
     console.log("THE IP ", this.connection.clientAddress);
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
       query: {
-        "ipAdr": ipAdr,
+        "ipAdr": clientIp,
         connections: {
           $elemMatch: {
             connID: clientConnId
@@ -213,13 +214,14 @@ Meteor.methods({
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
 
+    var clientIp = this.connection.clientAddress;
 
 
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
       query: {
-        "ipAdr": ipAdr,
+        "ipAdr": clientIp,
         connections: {
           $elemMatch: {
             connID: clientConnId
@@ -246,7 +248,7 @@ Meteor.methods({
     // clientConnId = Meteor.connection._lastSessionId;
     // console.log('clientConnId', clientConnId);
     console.log('getHubspotInfo');
-
+    clientIp = this.connection.clientAddress;
     var hapikey = "bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063"; // XXX: This is set for testing purposes otherwise it should be set from somewhere else
     var url = "https://api.hubapi.com/contacts/v1/contact/utk/" + UTK +
       "/profile?hapikey=" + hapikey;
