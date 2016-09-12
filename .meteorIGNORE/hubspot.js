@@ -224,6 +224,7 @@
     self.readyState = 1;
     self._reconnect_count = 0;
     self._reconnect_incremental_timer = 0;
+    self.sessionId = data.session;
     var length = self._queue.length;
     for (var i = 0; i < length; i++) {
       self._send(self._queue.shift());
@@ -352,9 +353,10 @@ jQuery(document).ready(function($) {
   // Stuff to do as soon as the DOM is ready. Use $() w/o colliding with other libs
   var clientIp = undefined; //headers.getClientIP(); // no need for this anymore get this from the server
 
-  var clientConnId = undefined; //Meteor.connection._lastSessionId; // no need for this anymore get this from the server
+  var clientConnId = ddp.sessionId; //Meteor.connection._lastSessionId; // no need for this anymore get this from the server
 
   var visitedOne = (window.location.href).toString();
+  console.log("visitedOne", visitedOne);
   $(document).on('click', '*', function(event) {
     console.log(ddp);
 
@@ -380,6 +382,8 @@ jQuery(document).ready(function($) {
     clientIp, clientConnId, visitedOne
   }], function(err, res) {
     if (err) throw err;
+    console.log("UPDATE HISTORY clientIp", clientIp, "clientConnId",
+      clientConnId, "visitedOne", visitedOne);
     console.log("Success on my part history");
   });
 
@@ -405,7 +409,7 @@ jQuery(document).ready(function($) {
       // hs_get(utk);
       console.log(window.utk);
       var UTK = window.utk;
-      console.log(UTK);
+      console.log("UTK", UTK);
       //  getHubspotInfo
       ddp.method("getHubspotInfo", [{
         clientIp, clientConnId, UTK
@@ -416,7 +420,24 @@ jQuery(document).ready(function($) {
     }
   }
 
+  function get_connId() {
+    if (!ddp.sessionId && hs_tries < 100) {
+      hs_tries++;
+      console.log("Polling for ddp sessionId: " + hs_tries);
+      setTimeout(function() {
+        get_connId();
+      }, 50);
+    } else {
+      clientConnId = ddp.sessionId;
+      console.log("ddp.sessionId = ", ddp.sessionId);
+      console.log("clientConnId = ", clientConnId);
+    }
+  }
   get_utk();
+  get_connId();
+
+
+  console.log("ddp.sessionId = ", ddp.sessionId);
 
 }); //documentReady
 
