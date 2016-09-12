@@ -98,7 +98,7 @@ Meteor.startup(() => {
 
     } //else
 
-    conn.onClose(function(conn) {
+    conn.onClose(function() {
       console.log('connection closed');
       //findAndModify will always refer to one document
       Ips.findAndModify({
