@@ -216,7 +216,8 @@ Meteor.methods({
 
     var clientIp = this.connection.clientAddress;
 
-
+    console.log("pushHubspotInfo clientConnId ", clientConnId,
+      "clientIp ", clientIp);
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
@@ -259,6 +260,7 @@ Meteor.methods({
       }
       if (result) {
         console.log("result", result);
+        console.log("getHubspotInfo clientConnId", clientConnId);
         Meteor.call("pushHubspotInfo", {
           clientConnId, UTK, result
         }, function(error, result) {
