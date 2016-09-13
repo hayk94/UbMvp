@@ -41,7 +41,7 @@
                 {{#with data}}
                 {{#with properties}}
                 {{#with firstname}}
-                {{value}}
+                 First Name: <i>{{value}}</i>
                 {{/with}}
                 {{/with}}
                 {{/with}}
@@ -49,11 +49,36 @@
                 {{/each}}
                 <!-- {{hubspotInfo.result.data.properties.firstname.value}} -->
                </strong>
-              <strong>{{hubspotInfo.result.data.properties.lastname.value}}</strong>
+              <strong>
+                {{#each hubspotInfo}}
+                {{#with result}}
+                {{#with data}}
+                {{#with properties}}
+                {{#with lastname}}
+                 Last Name: <i>{{value}}</i>
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/each}}
+                <!-- {{hubspotInfo.result.data.properties.lastname.value}} -->
+              </strong>
             </p>
             <p>
-              <strong>{{hubspotInfo.result.data.properties.email.value}}</strong>
-
+              <strong>
+                {{#each hubspotInfo}}
+                {{#with result}}
+                {{#with data}}
+                {{#with properties}}
+                {{#with email}}
+                 Email: <i>{{value}}</i>
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/with}}
+                {{/each}}
+                <!-- {{hubspotInfo.result.data.properties.email.value}} -->
+              </strong>
             </p>
           </p>
           <p>
