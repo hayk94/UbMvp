@@ -36,7 +36,7 @@
           <p>
             <p>
               <strong>
-                {{#with hubspotInfo}}
+                {{#each hubspotInfo}}
                 {{#with result}}
                 {{#with data}}
                 {{#with properties}}
@@ -46,7 +46,7 @@
                 {{/with}}
                 {{/with}}
                 {{/with}}
-                {{/with}}
+                {{/each}}
                 <!-- {{hubspotInfo.result.data.properties.firstname.value}} -->
                </strong>
               <strong>{{hubspotInfo.result.data.properties.lastname.value}}</strong>
