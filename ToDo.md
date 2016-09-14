@@ -1,4 +1,6 @@
 **SUBPUB - [ ] Make Everything to work with publications and subscriptions**
+               - [ ] Publish
+               - [ ] Subscribe
 
 **- [v] HUBSPOT contact API**
         - [v] Get UTK
