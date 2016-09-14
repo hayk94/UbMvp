@@ -1,7 +1,7 @@
-**SUBPUB - [ ] Make Everything to work with publications and subscriptions**
-               - [ ] Publish
-               - [ ] Subscribe
-
+**SUBPUB - [V] Make Everything to work with publications and subscriptions**
+               - [v] Publish
+               - [v] Subscribe
+               *At least for now it seems to work so YAAY!*
 **- [v] HUBSPOT contact API**
         - [v] Get UTK
         - [v] Sent UTK to my server and add to the DB
