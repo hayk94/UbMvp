@@ -20,6 +20,8 @@ import {
 }
 from '../api/ips.js';
 
+import { ReactiveDict } from 'meteor/reactive-dict';
+
 import "./body.html";
 
 Template.body.helpers({
@@ -197,6 +199,8 @@ Template.mainLayout.onCreated(function() {
         }
       }); //Meteor.call
     }
-  }, 300);
+  }, 300); //connIdInterval
 
-});
+  Meteor.subscribe("ips");
+
+}); //Template.mainLayout.onCreated
