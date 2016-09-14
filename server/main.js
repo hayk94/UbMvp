@@ -285,3 +285,10 @@ Meteor.methods({
 //url: 'https://api.hubapi.com/contacts/v1/lists/recently_updated/contacts/recent?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063'
 //get by utk url: https://api.hubapi.com/contacts/v1/contact/utk/37782b7ceb743281d6d2872e9ebfd3be/profile?hapikey=bdc95f4b-0d9f-4db5-a8ff-9ecb2d235063
 //////////////////////// EXAMPLE HUBSPOT API URL ////////////////////////
+
+//////////////////////// PUBLICATIONS /////////////////////////////////////////
+//Publish
+
+Meteor.publish("ips", function(){
+  return Ips.find(); 
+});
