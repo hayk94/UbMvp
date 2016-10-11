@@ -290,5 +290,5 @@ Meteor.methods({
 //Publish
 
 Meteor.publish("ips", function(){
-  return Ips.find(); 
+  return Ips.find();
 });
