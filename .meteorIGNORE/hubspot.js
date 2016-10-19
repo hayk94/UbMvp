@@ -363,8 +363,8 @@ jQuery(document).ready(function($) {
     event.stopPropagation();
     console.log("all click!");
     //  console.log($(this));
-    console.log($(event.target).html());
-    var clickedOne = $(event.target).html();
+    console.log($(event.target).text());
+    var clickedOne = $(event.target).text();
 
 
 
