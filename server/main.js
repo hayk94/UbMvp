@@ -26,17 +26,8 @@ Meteor.startup(() => {
     connID = conn.id;
     ipAdr = conn.clientAddress;
     var realIP = conn.httpHeaders['x-real-ip'];
-    //var firstVisited = FlowRouter.current(); //UNDEF
-    //console.log(firstVisited.path);
     console.log('connID'.connID);
-    // console.log(this.connection.id) this returns error
 
-    //trying to send the connID to the client
-    // Meteor.methods({
-    //   getSessionId: function() {
-    //   return connID;
-    //   }
-    // });
     //checking whether we are getting the right ips
     if (ipAdr !== realIP) {
       if (!realIP) {
@@ -72,9 +63,7 @@ Meteor.startup(() => {
         }], //connections
         createdAt: new Date(),
       }); //Ips.insert
-      //
-      // console.log(); console.log();
-    } else {
+            } else {
       Ips.update({
         "ipAdr": ipAdr
       }, {
@@ -130,24 +119,12 @@ Meteor.methods({
   'updateDB': function({
     clientIp, clientConnId, clickedOne
   }) {
-    //     Ips.update(
-    //     { "ipAdr": clientIp, "connections.connID": clientConnId},
-    //     { "$push":
-    //         {"connections.$.clicks":
-    //             {
-    //                 'clickedThis': clickedOne, 'clickedAt': new Date(),
-    //             }
-    //         }
-    //     }
-    // )
-    // debugger;
     clientIp = this.connection.clientAddress;
     console.log('clientIp', clientIp);
     console.log('clientConnId', clientConnId);
     console.log('ipAdr', ipAdr);
     console.log("THE IP ", this.connection.clientAddress);
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
+
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
@@ -171,14 +148,11 @@ Meteor.methods({
       }
     });
   },
-  // 'getIP': function () {
-  //     return this.connection.clientAddress;
-  // },
+
   'updateHistory': function({
     clientIp, clientConnId, visitedOne
   }) {
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
+
     clientIp = this.connection.clientAddress;
     console.log('UpdateHistory clientConnId', clientConnId, "visitedOne",
       visitedOne, "clientIp", clientIp);
@@ -211,8 +185,7 @@ Meteor.methods({
     clientConnId, UTK, result
   }) {
     console.log('pushHubspotInfo');
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
+
 
     var clientIp = this.connection.clientAddress;
 
@@ -246,8 +219,7 @@ Meteor.methods({
   'getHubspotInfo': function({
     clientIp, clientConnId, UTK
   }) {
-    // clientConnId = Meteor.connection._lastSessionId;
-    // console.log('clientConnId', clientConnId);
+    
     console.log('getHubspotInfo');
     console.log("getHubspotInfo outside HTTP clientConnId", clientConnId);
     clientIp = this.connection.clientAddress;
