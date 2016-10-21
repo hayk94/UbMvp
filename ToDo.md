@@ -1,9 +1,8 @@
-**SPRINTS**
-    **- [ ] As a user I want to capture lead and customer revisits in my store / website and get real time notifications**
-          - [ ] Chrome notifications
-          - [ ] csv to JSON
-          - [ ] filter data from json
-
+**- [ ] MIGRATE TO REACT**
+        *- [ ] Clear up and structurize the code*
+                - [ ] Remove unneccesary comments
+                - [ ] Remove unnecessary codes
+                - [ ] Move methods from the server to appropriate db file
 **SUBPUB - [V] Make Everything to work with publications and subscriptions**
                - [v] Publish
                - [v] Subscribe
