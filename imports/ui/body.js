@@ -24,10 +24,6 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 
 import "./body.html";
 
-Template.body.helpers({
-
-});
-
 Template.ips.helpers({
   ips() {
     // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
@@ -36,8 +32,6 @@ Template.ips.helpers({
         createdAt: -1
       }
     }).fetch(), undefined, 2);
-
-    // return Ips.find({},{sort: { createdAt: -1 } });
   },
 });
 
@@ -63,15 +57,6 @@ Template.ui.helpers({
 
 
 //MAKING THE UI END
-
-Template.registerHelper("keyval", function(object) {
-  return _.map(object, function(value, key) {
-    return {
-      key: key,
-      value: value
-    };
-  });
-});
 
 Template.ip.events({
   "click .showHide": function(event, template) {
@@ -124,49 +109,6 @@ Template.mainLayout.events({
   }, // click *
 }); //events
 
-// Template.body.events({
-//   "click *": function(event, template){
-//      event.stopPropagation();
-//      console.log('body all click log');
-//     //  console.log(c0nnIp);
-//      var clickedOne = $(event.target).html().toString();
-//      console.log('This click ' + clickedOne);
-//      //getting the connID
-//
-//     var clientIp = headers.getClientIP();
-//     var clientConnId = Meteor.connection._lastSessionId;
-//     console.log(clientIp);
-//     console.log(clientConnId);
-//
-//
-//
-//     Meteor.call("updateDB", {clientIp,clientConnId,clickedOne}, function(error, result){
-//       if(error){
-//         console.log("erro/ipsr", error);
-//       }
-//       if(result){
-//
-//       }
-//     });
-//
-//   }, // click *
-// });//events
-
-
-
-// //routing
-// FlowRouter.route('/test',{
-//   name: 'testPost',
-//   action: function (params) {
-//     console.log('This is my blog post:', params.postId);
-//   }
-// });
-
-// Template.onCreated(function () {
-//   console.log('dynamic tempa changed');
-//   console.log(window.location.href);
-// });
-
 Template.mainLayout.onCreated(function() {
   console.log("mainLayout created");
   var context = FlowRouter.current();
@@ -176,7 +118,7 @@ Template.mainLayout.onCreated(function() {
 
   //getting the connID
   var clientConnId;
-  var clientIp = headers.getClientIP(); // no need for this anymore
+  var clientIp = headers.getClientIP();
   var connIdInterval = Meteor.setInterval(function() {
     console.log('interval');
     if (Meteor.connection._lastSessionId) {
