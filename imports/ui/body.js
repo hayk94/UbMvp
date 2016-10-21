@@ -1,24 +1,6 @@
-import {
-  Meteor
-}
-from 'meteor/meteor';
-import {
-  Template
-}
-from 'meteor/templating';
-
-import {
-  Tasks
-}
-from '../api/tasks.js';
-import {
-  Conns
-}
-from '../api/conns.js';
-import {
-  Ips
-}
-from '../api/ips.js';
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { Ips } from '../api/ips.js';
 
 import { ReactiveDict } from 'meteor/reactive-dict';
 

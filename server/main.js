@@ -1,22 +1,8 @@
-import {
-  Meteor
-}
-from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 
-import {
-  HTTP
-}
-from 'meteor/http';
+import { HTTP } from 'meteor/http';
 
-import '../imports/api/tasks.js';
-import {
-  Conns
-}
-from '../imports/api/conns.js';
-import {
-  Ips
-}
-from '../imports/api/ips.js';
+import { Ips } from '../imports/api/ips.js';
 
 
 
