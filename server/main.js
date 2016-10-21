@@ -26,8 +26,17 @@ Meteor.startup(() => {
     connID = conn.id;
     ipAdr = conn.clientAddress;
     var realIP = conn.httpHeaders['x-real-ip'];
+    //var firstVisited = FlowRouter.current(); //UNDEF
+    //console.log(firstVisited.path);
     console.log('connID'.connID);
+    // console.log(this.connection.id) this returns error
 
+    //trying to send the connID to the client
+    // Meteor.methods({
+    //   getSessionId: function() {
+    //   return connID;
+    //   }
+    // });
     //checking whether we are getting the right ips
     if (ipAdr !== realIP) {
       if (!realIP) {
@@ -63,7 +72,9 @@ Meteor.startup(() => {
         }], //connections
         createdAt: new Date(),
       }); //Ips.insert
-            } else {
+      //
+      // console.log(); console.log();
+    } else {
       Ips.update({
         "ipAdr": ipAdr
       }, {
