@@ -1,4 +1,4 @@
-meteor npm install --save react react-dom
-meteor npm install --save react-addons-pure-render-mixin
-meteor add react-meteor-data
-meteor npm install --save classnames
+- [v] meteor npm install --save react react-dom
+- [v] meteor npm install --save react-addons-pure-render-mixin
+- [v] meteor add react-meteor-data
+- [v] meteor npm install --save classnames

@@ -3,8 +3,10 @@
                 - [V] Remove unneccesary comments
                 - [V] Remove unnecessary codes
                 - [V] Move methods from the server to appropriate db file
-        *- [ ] Migrate*
-                - [ ] Add all needed packages
+        *- [v] Migrate*
+                - [v] Add all needed packages
+        *- [ ] UI*
+                - [ ] Think the structure
 **SUBPUB - [V] Make Everything to work with publications and subscriptions**
                - [v] Publish
                - [v] Subscribe
