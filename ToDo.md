@@ -1,8 +1,8 @@
 **- [ ] MIGRATE TO REACT**
-        *- [ ] Clear up and structurize the code*
-                - [ ] Remove unneccesary comments
-                - [ ] Remove unnecessary codes
-                - [ ] Move methods from the server to appropriate db file
+        *- [v] Clear up and structurize the code*
+                - [V] Remove unneccesary comments
+                - [V] Remove unnecessary codes
+                - [V] Move methods from the server to appropriate db file
         *- [ ] Migrate*
                 - [ ] Add all needed packages
 **SUBPUB - [V] Make Everything to work with publications and subscriptions**
