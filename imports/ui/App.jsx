@@ -5,17 +5,25 @@ import { createContainer } from 'meteor/react-meteor-data'
 
 import { Ips } from '../api/ips.js'
 
+import Client from './Client.jsx'
+
 // import Task from './Task.jsx'
 
 // App component - represents the whole app
 class App extends Component {
-
-
-
+  renderClients () {
+    return this.props.ips.map((ip) => (
+     <Client key={ip._id} ip={ip} />
+   ))
+  }
   render () {
     return (
-      <div>
-        Hello!
+      <div className="container">
+        <h1>All Users</h1>
+        <hr className="myHR" />
+        <ul className="clients">
+          {this.renderClients()}
+        </ul>
       </div>
     )
   }
@@ -29,7 +37,7 @@ class App extends Component {
 
 export default createContainer(() => {
   Meteor.subscribe('ips')
-
+  // REVIEW: For now we're bringing the whole ip dbs with lots of Hubspot info, I am sure this will later cause some problems.. A good solution may be to create another db for what is needed to be delivered to the frontend like ipsFront.js and save front data there
   return {
     ips: Ips.find({}, { sort: { createdAt: -1 } }).fetch()
   }
