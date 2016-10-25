@@ -4,6 +4,6 @@ import classnames from 'classnames'
 
 export default class Client extends Component {
   render () {
-    
+    <p>{this.ip.ipAdr}</p>
   } // render
 } // Client
