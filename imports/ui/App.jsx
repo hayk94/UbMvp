@@ -7,8 +7,6 @@ import { Ips } from '../api/ips.js'
 
 import Client from './Client.jsx'
 
-// import Task from './Task.jsx'
-
 // App component - represents the whole app
 class App extends Component {
   renderClients () {
@@ -29,11 +27,11 @@ class App extends Component {
   }
 }
 
-// App.propTypes = {
-//   tasks: PropTypes.array.isRequired,
-//   incompleteCount: PropTypes.number.isRequired,
-//   currentUser: PropTypes.object
-// }
+App.propTypes = {
+  ips: PropTypes.array.isRequired
+  // incompleteCount: PropTypes.number.isRequired,
+  // currentUser: PropTypes.object
+}
 
 export default createContainer(() => {
   Meteor.subscribe('ips')
