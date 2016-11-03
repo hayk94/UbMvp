@@ -23,19 +23,13 @@ class App extends Component {
           {this.renderClients()}
         </ul>
         <div>
-          //Template.ips.helpers({
-            // ips() {
-            //   // console.log(Ips.find({},{sort: { createdAt: -1 } }).fetch());
-              //return
-              JSON.stringify(Ips.find({}, {
+        {
+           JSON.stringify(Ips.find({}, {
                 sort: {
                   createdAt: -1
                 }
-              }).fetch(), undefined, 2);
-          //
-          //     // return Ips.find({},{sort: { createdAt: -1 } });
-          //   },
-          // });
+              }).fetch(), undefined, 2)
+            }
         </div>
       </div>
     )
