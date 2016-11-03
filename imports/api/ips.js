@@ -106,7 +106,7 @@ Meteor.methods({
       //Update only the elements of the array where the specified criteria matches
       update: {
         $push: {
-          'connections.$': {
+          'connections': {
             vid: result.data.vid, // vid is hubspot contact id
             firstName: result.data.properties.firstname.value,
             lastName: result.data.properties.lastname.value
