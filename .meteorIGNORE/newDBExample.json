@@ -1,0 +1,132 @@
+[
+  {
+    "_id": "Z6THEbjXwXgknMnf3",
+    "ipAdr": "89.249.197.77",
+    "connections": [
+      {
+        "connID": "DuTLTfa6Mg73Zpyn3",
+        "ipAdr": "89.249.197.77",
+        "httpHeads": {
+          "host": "grandeur-frog-206054.nitrousapp.com",
+          "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+          "realIP": "89.249.197.77"
+        },
+        "connectedAt": "2016-11-03T10:51:50.390Z",
+        "disconnectedAt": "2016-11-03T10:52:11.071Z",
+        "clicks": [],
+        "visits": [
+          {
+            "visitedThis": "http://wireline-dev-2522899-2522899.hs-sites.com/ubmvp",
+            "visitedAt": "2016-11-03T10:51:50.721Z"
+          }
+        ],
+        "hubspotInfo": [],
+        "vid": 501,
+        "firstName": "Hayk Dzya",
+        "lastName": "Dzya",
+        "UTK": "4c05b811063685e2be20a2ce6184131c",
+        "email": "hayk@incredo.co"
+      },
+      {
+        "connID": "oLayg6y2RTCxe78x5",
+        "ipAdr": "89.249.197.77",
+        "httpHeads": {
+          "host": "grandeur-frog-206054.nitrousapp.com",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+          "realIP": "89.249.197.77"
+        },
+        "connectedAt": "2016-11-03T10:52:23.406Z",
+        "disconnectedAt": "2016-11-03T10:52:41.795Z",
+        "clicks": [],
+        "visits": [],
+        "hubspotInfo": []
+      },
+      {
+        "connID": "5CtdwnbFDfrm6eZvz",
+        "ipAdr": "89.249.197.77",
+        "httpHeads": {
+          "host": "grandeur-frog-206054.nitrousapp.com",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+          "realIP": "89.249.197.77"
+        },
+        "connectedAt": "2016-11-03T10:52:47.733Z",
+        "disconnectedAt": "2016-11-03T11:54:27.744Z",
+        "clicks": [],
+        "visits": [],
+        "hubspotInfo": []
+      },
+      {
+        "connID": "TcMnYRNXJSEt3xhdY",
+        "ipAdr": "89.249.197.77",
+        "httpHeads": {
+          "host": "grandeur-frog-206054.nitrousapp.com",
+          "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+          "realIP": "89.249.197.77"
+        },
+        "connectedAt": "2016-11-03T11:54:19.580Z",
+        "disconnectedAt": null,
+        "clicks": [
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:21.884Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:22.096Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:23.081Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:23.270Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:23.611Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:23.693Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:23.906Z"
+          },
+          {
+            "clickedThis": "Something Powerful",
+            "clickedAt": "2016-11-03T11:54:24.230Z"
+          }
+        ],
+        "visits": [
+          {
+            "visitedThis": "http://wireline-dev-2522899-2522899.hs-sites.com/ubmvp",
+            "visitedAt": "2016-11-03T11:54:19.871Z"
+          }
+        ],
+        "hubspotInfo": [],
+        "vid": 501,
+        "firstName": "Hayk Dzya",
+        "lastName": "Dzya",
+        "UTK": "4c05b811063685e2be20a2ce6184131c",
+        "email": "hayk@incredo.co"
+      },
+      {
+        "connID": "i5S5W4GpfvhEsHJTE",
+        "ipAdr": "89.249.197.77",
+        "httpHeads": {
+          "host": "grandeur-frog-206054.nitrousapp.com",
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+          "realIP": "89.249.197.77"
+        },
+        "connectedAt": "2016-11-03T11:54:35.337Z",
+        "disconnectedAt": null,
+        "clicks": [],
+        "visits": [],
+        "hubspotInfo": []
+      }
+    ],
+    "createdAt": "2016-11-03T10:51:50.390Z"
+  }
+]
