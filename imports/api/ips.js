@@ -136,7 +136,8 @@ Meteor.methods({
             // http://stackoverflow.com/questions/40396750/mongodb-push-data-to-specific-array-element#40398023
             'connections.$.vid': result.data.vid, // vid is hubspot contact id
             'connections.$.firstName': result.data.properties.firstname.value,
-            'connections.$.lastName': result.data.properties.lastname.value
+            'connections.$.lastName': result.data.properties.lastname.value,
+            'connections.$.UTK': UTK
               // NOTE: here should also be an image but hubspot does't give it for now
               // https://integrate.hubspot.com/t/can-we-use-contacts-api-to-retrieve-an-image-for-the-contact/731
           }
