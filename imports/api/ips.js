@@ -106,16 +106,35 @@ Meteor.methods({
       //Update only the elements of the array where the specified criteria matches
       update: {
         $push: {
+          'connections.$.hubspotInfo': {
+            UTK: UTK,
+            result: result
+          }
+        }
+      }
+    }); //Ips.findAndModify
+    
+    Ips.findAndModify({
+
+      //Find the desired document based on specified criteria
+      query: {
+        "ipAdr": clientIp,
+        connections: {
+          $elemMatch: {
+            connID: clientConnId
+          }
+        }
+      },
+
+      //Update only the elements of the array where the specified criteria matches
+      update: {
+        $push: {
           'connections': {
             vid: result.data.vid, // vid is hubspot contact id
             firstName: result.data.properties.firstname.value,
             lastName: result.data.properties.lastname.value
             // NOTE: here should also be an image but hubspot does't give it for now
             // https://integrate.hubspot.com/t/can-we-use-contacts-api-to-retrieve-an-image-for-the-contact/731
-          },
-          'connections.$.hubspotInfo': {
-            UTK: UTK,
-            result: result
           }
         }
       }
