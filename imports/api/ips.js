@@ -91,6 +91,8 @@ Meteor.methods({
 
     console.log("pushHubspotInfo clientConnId ", clientConnId,
       "clientIp ", clientIp);
+
+
     Ips.findAndModify({
 
       //Find the desired document based on specified criteria
@@ -128,13 +130,16 @@ Meteor.methods({
 
       //Update only the elements of the array where the specified criteria matches
       update: {
-        $set: {
-          'connections.$.vid': result.data.vid, // vid is hubspot contact id
-          'connections.$.firstName': result.data.properties.firstname.value,
-          'connections.$.lastName': result.data.properties.lastname.value
-            // NOTE: here should also be an image but hubspot does't give it for now
-            // https://integrate.hubspot.com/t/can-we-use-contacts-api-to-retrieve-an-image-for-the-contact/731
-        }
+          $set: {
+            // You don't need to use the $push operator here as it adds a new element to array, instead you need to modify an
+            // element that is already in the array, try the $set operator to update as follows:
+            // http://stackoverflow.com/questions/40396750/mongodb-push-data-to-specific-array-element#40398023
+            'connections.$.vid': result.data.vid, // vid is hubspot contact id
+            'connections.$.firstName': result.data.properties.firstname.value,
+            'connections.$.lastName': result.data.properties.lastname.value
+              // NOTE: here should also be an image but hubspot does't give it for now
+              // https://integrate.hubspot.com/t/can-we-use-contacts-api-to-retrieve-an-image-for-the-contact/731
+          }
       }
     }); //Ips.findAndModify
   }, //pushHubspotInfo
