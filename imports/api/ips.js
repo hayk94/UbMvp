@@ -92,29 +92,33 @@ Meteor.methods({
     console.log("pushHubspotInfo clientConnId ", clientConnId,
       "clientIp ", clientIp);
 
-
-    Ips.findAndModify({
-
-      //Find the desired document based on specified criteria
-      query: {
-        "ipAdr": clientIp,
-        connections: {
-          $elemMatch: {
-            connID: clientConnId
-          }
-        }
-      },
-
-      //Update only the elements of the array where the specified criteria matches
-      update: {
-        $push: {
-          'connections.$.hubspotInfo': {
-            UTK: UTK,
-            result: result
-          }
-        }
-      }
-    }); //Ips.findAndModify
+    /**
+     *
+     * The following puts the whole hubspot json response into the db, we do not need that for now
+     *
+     */
+    // Ips.findAndModify({
+    //
+    //   //Find the desired document based on specified criteria
+    //   query: {
+    //     "ipAdr": clientIp,
+    //     connections: {
+    //       $elemMatch: {
+    //         connID: clientConnId
+    //       }
+    //     }
+    //   },
+    //
+    //   //Update only the elements of the array where the specified criteria matches
+    //   update: {
+    //     $push: {
+    //       'connections.$.hubspotInfo': {
+    //         UTK: UTK,
+    //         result: result
+    //       }
+    //     }
+    //   }
+    // }); //Ips.findAndModify
 
     Ips.findAndModify({
 
