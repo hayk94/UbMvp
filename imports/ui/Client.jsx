@@ -4,8 +4,7 @@ import classnames from 'classnames'
 
 export default class Client extends Component {
   render () {
-
-    // TODO:0 make an array from the ips but with the needed info and more user-oriented 
+    // DONE:0 make an array from the ips but with the needed info and more user-oriented ... No need for this
 
     return <p>{this.props.ip.ipAdr}</p>
   } // render
