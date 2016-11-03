@@ -5,7 +5,7 @@ import classnames from 'classnames'
 export default class Client extends Component {
   render () {
 
-    // TODO: make an array from the ips but with the needed info and more user-oriented 
+    // TODO:0 make an array from the ips but with the needed info and more user-oriented 
 
     return <p>{this.props.ip.ipAdr}</p>
   } // render

@@ -1,0 +1,4 @@
+/.gitingnore
+/.meteor
+/node_modules
+/design
