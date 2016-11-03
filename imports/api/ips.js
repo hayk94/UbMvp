@@ -141,7 +141,8 @@ Meteor.methods({
             'connections.$.vid': result.data.vid, // vid is hubspot contact id
             'connections.$.firstName': result.data.properties.firstname.value,
             'connections.$.lastName': result.data.properties.lastname.value,
-            'connections.$.UTK': UTK
+            'connections.$.UTK': UTK,
+            'connections.$.email': result.data.properties.email.value
               // NOTE: here should also be an image but hubspot does't give it for now
               // https://integrate.hubspot.com/t/can-we-use-contacts-api-to-retrieve-an-image-for-the-contact/731
           }
