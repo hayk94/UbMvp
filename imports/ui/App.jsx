@@ -22,7 +22,7 @@ class App extends Component {
         <ul className="clients">
           {this.renderClients()}
         </ul>
-        <div>
+        <pre>
         {
            JSON.stringify(Ips.find({}, {
                 sort: {
@@ -30,7 +30,7 @@ class App extends Component {
                 }
               }).fetch(), undefined, 2)
             }
-        </div>
+        </pre>
       </div>
     )
   }
