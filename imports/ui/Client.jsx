@@ -15,7 +15,7 @@ export default class Client extends Component {
 
     specialArrays = {};
     for (var i = this.props.ip.connections.map.length - 1; i >= 0; i--) {
-      if (!Array.isArray(specialArrays[myArray[i].specialValue])) {
+      if (!Array.isArray(specialArrays[this.props.ip.connections[i].specialValue])) {
         specialArrays[this.props.ip.connections.map[i].specialValue] = []
       }
       specialArrays[this.props.ip.connections.map[i].specialValue].push(this.props.ip.connections.map[i])
