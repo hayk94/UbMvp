@@ -5,8 +5,25 @@ import classnames from 'classnames'
 export default class Client extends Component {
   render () {
     // DONE:0 make an array from the ips but with the needed info and more user-oriented ... No need for this
-    var contactArr = this.props.ip.connections.map((vid) => ({vid}))
-    console.log(contactArr)
+
+    /*=============================================>>>>>
+    = Getting array with same vids =
+    ===============================================>>>>>*/
+    // var contactArr = this.props.ip.connections.map((vid) => ({vid}))
+    // console.log(contactArr)
+    /*----------- stackoverflow answers -----------*/
+
+    specialArrays = {};
+    for (var i = this.props.ip.connections.map.length - 1; i >= 0; i--) {
+      if (!Array.isArray(specialArrays[myArray[i].specialValue])) {
+        specialArrays[this.props.ip.connections.map[i].specialValue] = []
+      }
+      specialArrays[this.props.ip.connections.map[i].specialValue].push(this.props.ip.connections.map[i])
+    }
+    console.log(specialArrays)
+
+    /*= End of Getting array with same vids =*/
+    /*=============================================<<<<<*/
     return <div className="contactBox">{this.props.ip.ipAdr}</div>
   } // render
 } // Client
