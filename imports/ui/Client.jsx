@@ -3,6 +3,11 @@ import { Meteor } from 'meteor/meteor'
 import classnames from 'classnames'
 
 export default class Client extends Component {
+  renderContactBox (grouped) {
+    return this.props.ips.map((ip) => (
+     <Client key={ip._id} ip={ip} />
+   ))
+  }
   render () {
     // DONE:20 make an array from the ips but with the needed info and more user-oriented ... No need for this
 
@@ -20,9 +25,12 @@ export default class Client extends Component {
            console.log(grouped)
     /* = End of Getting array with same vids =*/
     /* =============================================<<<<<*/
+
     // TODO: Make the html of everything we can get now
     // TODO: Check if it is reactive
-    return <div className="contactBox">{this.props.ip.ipAdr}</div>
+    // in the grouped array there are arrays, each array is for only one vid, objects inside it represent connections e.g site user visited
+    return {this.renderContactBox(grouped)}
+    // return <div className="contactBox">{this.props.ip.ipAdr}</div>
   } // render
 } // Client
 
