@@ -16,7 +16,7 @@ export default class ContactBox extends Component {
           <div className="contactHead">
             <div className="contactImg">
               <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/524202-200.png" />
-            </div> // contactImg
+            </div> {/* contactImg */}
             <div className="contactInfo">
               <p className="contactName">
                 <strong>
