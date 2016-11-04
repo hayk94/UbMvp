@@ -24,12 +24,12 @@ export default class ContactBox extends Component {
                     {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'unknown first name'}
                   </span>
                   <span className="contactLastName">
-                    {this.props.contact[0].lastName ? this.props.contact[0].lastName : 'unknown last name'}
+                    {' ' + this.props.contact[0].lastName ? this.props.contact[0].lastName : 'unknown last name'}
                   </span>
                 </strong>
               </p> {/* contactName */}
               <p className="contactEmail">
-                {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}></a> : <span>'unknown mail'</span>}
+                {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}>{this.props.contact[0].email}</a> : <span>'unknown mail'</span>}
               </p> {/* contactEmail */}
               <p className="contactIp">
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
