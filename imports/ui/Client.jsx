@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 export default class Client extends Component {
   render () {
-    // DONE:0 make an array from the ips but with the needed info and more user-oriented ... No need for this
+    // DONE:20 make an array from the ips but with the needed info and more user-oriented ... No need for this
 
     /* =============================================>>>>>
     = Getting array with same vids =
@@ -20,6 +20,8 @@ export default class Client extends Component {
            console.log(grouped)
     /* = End of Getting array with same vids =*/
     /* =============================================<<<<<*/
+    // TODO: Make the html of everything we can get now
+    // TODO: Check if it is reactive
     return <div className="contactBox">{this.props.ip.ipAdr}</div>
   } // render
 } // Client

@@ -44,7 +44,7 @@ App.propTypes = {
 
 export default createContainer(() => {
   Meteor.subscribe('ips')
-  // DONE: For now we're bringing the whole ip dbs with lots of Hubspot info, I am sure this will later cause some problems.. A good solution may be to create another db for what is needed to be delivered to the frontend like ipsFront.js and save front data there .... changed the db it is no longer that large anymore at least for now
+  // DONE:10 For now we're bringing the whole ip dbs with lots of Hubspot info, I am sure this will later cause some problems.. A good solution may be to create another db for what is needed to be delivered to the frontend like ipsFront.js and save front data there .... changed the db it is no longer that large anymore at least for now
   return {
     ips: Ips.find({}).fetch()
   }

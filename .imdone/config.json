@@ -23,11 +23,11 @@
   "lists": [
     {
       "name": "NOTE",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "XXX",
-      "hidden": false
+      "hidden": true
     },
     {
       "name": "REVIEW",
