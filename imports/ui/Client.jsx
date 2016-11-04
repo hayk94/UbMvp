@@ -6,24 +6,18 @@ export default class Client extends Component {
   render () {
     // DONE:0 make an array from the ips but with the needed info and more user-oriented ... No need for this
 
-    /*=============================================>>>>>
+    /* =============================================>>>>>
     = Getting array with same vids =
     ===============================================>>>>>*/
-    // var contactArr = this.props.ip.connections.map((vid) => ({vid}))
-    // console.log(contactArr)
-    /*----------- stackoverflow answers -----------*/
+    /*----------- another stack overflow answer by Nina Scholz -----------*/
+    var object = { "myArray" : this.props.ip.connections },
+    grouped = object.myArray.reduce((map =>
+        (r, a) =>
+           (!map.has(a.vid) && map.set(a.vid, r[r.push([]) - 1]), map.get(a.vid).push(a), r))(new Map), []);
 
-    specialArrays = {};
-    for (var i = this.props.ip.connections.length - 1; i >= 0; i--) {
-      if (!Array.isArray(specialArrays[this.props.ip.connections[i].specialValue])) {
-        specialArrays[this.props.ip.connections[i].specialValue] = []
-      }
-      specialArrays[this.props.ip.connections[i].specialValue].push(this.props.ip.connections[i])
-    }
-    console.log(specialArrays)
-
-    /*= End of Getting array with same vids =*/
-    /*=============================================<<<<<*/
+           console.log(grouped);
+    /* = End of Getting array with same vids =*/
+    /* =============================================<<<<<*/
     return <div className="contactBox">{this.props.ip.ipAdr}</div>
   } // render
 } // Client
