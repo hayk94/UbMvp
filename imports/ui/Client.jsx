@@ -13,9 +13,9 @@ export default class Client extends Component {
     var object = { "myArray" : this.props.ip.connections },
     grouped = object.myArray.reduce((map =>
         (r, a) =>
-           (!map.has(a.vid) && map.set(a.vid, r[r.push([]) - 1]), map.get(a.vid).push(a), r))(new Map), []);
+           (!map.has(a.vid) && map.set(a.vid, r[r.push([]) - 1]), map.get(a.vid).push(a), r))(new Map), [])
 
-           console.log(grouped);
+           console.log(grouped)
     /* = End of Getting array with same vids =*/
     /* =============================================<<<<<*/
     return <div className="contactBox">{this.props.ip.ipAdr}</div>
