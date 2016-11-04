@@ -40,7 +40,7 @@ export default class Client extends Component {
     // TODO: Check if it is reactive
     // in the grouped array there are arrays, each array is for only one vid, objects inside it represent connections e.g site user visited
     // return ()
-    return <div className="contactBox">{this.renderContactBox(grouped)}</div>
+    return <div className="contactBoxes">{this.renderContactBox(grouped)}</div>
   } // render
 } // Client
 
