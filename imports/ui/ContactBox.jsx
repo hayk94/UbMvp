@@ -21,7 +21,7 @@ export default class ContactBox extends Component {
               <p className="contactName">
                 <strong>
                   <span className="contactFirstName">
-                    {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'unknown first name'}
+                    {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'unknown first name '}
                   </span>
                   <span className="contactLastName">
                     {this.props.contact[0].lastName ? ' ' + this.props.contact[0].lastName : 'unknown last name'}
