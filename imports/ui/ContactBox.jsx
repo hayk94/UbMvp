@@ -11,6 +11,7 @@ import React, { Component, PropTypes } from 'react'
 export default class ContactBox extends Component {
   render () {
       console.log(this.contact)
+      return <div></div>
   }
 }
 
