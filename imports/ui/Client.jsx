@@ -9,8 +9,8 @@ import React, { Component, PropTypes } from 'react'
 
 import ContactBox from './ContactBox.jsx'
 
-/*= End of imports =*/
-/*=============================================<<<<<*/
+/* = End of imports = */
+/* =============================================<<<<< */
 
 export default class Client extends Component {
   renderContactBox (grouped) {
