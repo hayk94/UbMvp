@@ -11,7 +11,11 @@ import React, { Component, PropTypes } from 'react'
 export default class ContactBox extends Component {
   render () {
       console.log(this.props.contact)
-      return <div>{this.props.contact[0].firstName}</div>
+      return (
+        <div>
+          {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'no name'}
+        </div>
+    )
   }
 }
 
