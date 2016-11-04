@@ -14,11 +14,11 @@ export default class Client extends Component {
     /*----------- stackoverflow answers -----------*/
 
     specialArrays = {};
-    for (var i = this.props.ip.connections.map.length - 1; i >= 0; i--) {
+    for (var i = this.props.ip.connections.length - 1; i >= 0; i--) {
       if (!Array.isArray(specialArrays[this.props.ip.connections[i].specialValue])) {
-        specialArrays[this.props.ip.connections.map[i].specialValue] = []
+        specialArrays[this.props.ip.connections[i].specialValue] = []
       }
-      specialArrays[this.props.ip.connections.map[i].specialValue].push(this.props.ip.connections.map[i])
+      specialArrays[this.props.ip.connections[i].specialValue].push(this.props.ip.connections[i])
     }
     console.log(specialArrays)
 
