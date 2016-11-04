@@ -9,7 +9,8 @@ export default class Client extends Component {
     /* =============================================>>>>>
     = Getting array with same vids =
     ===============================================>>>>>*/
-    /*----------- another stack overflow answer by Nina Scholz -----------*/
+    /*----------- WORKING stack overflow answer by Nina Scholz -----------*/
+    // http://stackoverflow.com/questions/40416608/js-getting-a-new-array-with-just-the-elements-that-contain-certain-value/40417288#40416657
     var object = { "myArray" : this.props.ip.connections },
     grouped = object.myArray.reduce((map =>
         (r, a) =>
