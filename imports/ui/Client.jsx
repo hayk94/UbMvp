@@ -1,11 +1,21 @@
+/*=============================================>>>>>
+= imports =
+===============================================>>>>>*/
 import React, { Component, PropTypes } from 'react'
 import { Meteor } from 'meteor/meteor'
 import classnames from 'classnames'
 
+/* ----------- Components ----------- */
+
+import ContactBox from './ContactBox.jsx'
+
+/*= End of imports =*/
+/*=============================================<<<<<*/
+
 export default class Client extends Component {
   renderContactBox (grouped) {
-    return this.props.ips.map((ip) => (
-     <Client key={ip._id} ip={ip} />
+    return grouped.map((contact) => (
+     <ContactBox key={contact._id} contact={contact} />
    ))
   }
   render () {
@@ -29,8 +39,8 @@ export default class Client extends Component {
     // TODO: Make the html of everything we can get now
     // TODO: Check if it is reactive
     // in the grouped array there are arrays, each array is for only one vid, objects inside it represent connections e.g site user visited
-    return {this.renderContactBox(grouped)}
-    // return <div className="contactBox">{this.props.ip.ipAdr}</div>
+    // return ()
+    return <div className="contactBox">{this.renderContactBox(grouped)}</div>
   } // render
 } // Client
 
