@@ -29,7 +29,7 @@ export default class ContactBox extends Component {
                 </strong>
               </p> {/* contactName */}
               <p className="contactEmail">
-                {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}>{this.props.contact[0].email}</a> : <span>'unknown mail'</span>}
+                {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}>{this.props.contact[0].email}</a> : <span>unknown mail</span>}
               </p> {/* contactEmail */}
               <p className="contactIp">
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
