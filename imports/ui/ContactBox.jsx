@@ -10,7 +10,7 @@ import React, { Component, PropTypes } from 'react'
 
 export default class ContactBox extends Component {
   render () {
-      console.log(this.props.contact)
+      console.log('this.props.contact in ContactBox.jsx',this.props.contact)
       return (
         <div className="contactBox">
           <div className="contactHead">
