@@ -340,7 +340,7 @@
 
 
 var options = {
-  endpoint: "wss://grandeur-frog-206054.nitrousapp.com/websocket", // NOTE: it is ws not http or wss not https Need to resear more about the websockets
+  endpoint: "wss://ubmvp-92911.onmodulus.net/websocket", // NOTE: it is ws not http or wss not https Need to resear more about the websockets
   SocketConstructor: WebSocket
 };
 var ddp = new DDP(options);
@@ -353,7 +353,7 @@ jQuery(document).ready(function($) {
   // Stuff to do as soon as the DOM is ready. Use $() w/o colliding with other libs
   var clientIp = undefined; //headers.getClientIP(); // no need for this anymore get this from the server
 
-  var clientConnId = ddp.sessionId; //Meteor.connection._lastSessionId; // no need for this anymore get this from the server
+  var clientConnId = ddp.sessionId; //Meteor.connection._lastSessionId;
 
   var visitedOne = (window.location.href).toString();
   console.log("visitedOne", visitedOne);
