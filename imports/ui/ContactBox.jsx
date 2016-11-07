@@ -38,8 +38,9 @@ export default class ContactBox extends Component {
           </div> {/* contactHead */}
         </div>
     )
-  }
-}
+    // TODO: Make connections to render
+  } // render ()
+} // Component
 
 ContactBox.propTypes = {
   // This component gets the task to dipslay through a React prop.

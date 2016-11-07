@@ -6,7 +6,13 @@
         *- [v] Migrate*
                 - [v] Add all needed packages
         *- [ ] UI*
-                - [ ] Think the structure
+                - [v] Think the structure
+                *- [ ] Render the connections*
+                      *- [ ] Learn underscore*
+                        - [ ] render the last connection details in the contact head
+                              - [ ] learn underscore to get the last connection
+                        - [ ] Render other connections in a chronological order
+                              - [ ] learn underscore to sort
 **SUBPUB - [V] Make Everything to work with publications and subscriptions**
                - [v] Publish
                - [v] Subscribe
