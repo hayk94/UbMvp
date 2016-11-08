@@ -39,6 +39,16 @@ export default class ContactBox extends Component {
         </div>
     )
     // TODO: Make connections to render
+    // get from the contact[] the objects{} that do not have disconnectedAt and get the one that has the latest connectedAt
+
+    // get online connections
+     var onlineConns = _.where(this.prop.contact, { disconnectedAt : null})
+     console.log('onlineConns',onlineConns)
+   // sort to get the most recent
+     onlineConns = _.sortBy(onlineConns, (conn) => {
+       return conn.connectedAt
+     })
+     console.log('onlineConns sorted', onlineConns)
   } // render ()
 } // Component
 
