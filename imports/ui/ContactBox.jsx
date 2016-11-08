@@ -23,6 +23,7 @@ export default class ContactBox extends Component {
        onlineConns = _.sortBy(onlineConns, (conn) => {
          return conn.connectedAt
        })
+       // REVIEW: it seems that the filter already returns a sorted array in asc order, the last one is the last conn
        console.log('onlineConns sorted', onlineConns)
       return (
         <div className="contactBox">
