@@ -31,3 +31,4 @@ http@1.2.10
 reactive-dict@1.1.8
 react-meteor-data
 shell-server
+stevezhu:lodash
