@@ -15,7 +15,9 @@ export default class ContactBox extends Component {
       // get from the contact[] the objects{} that do not have disconnectedAt and get the one that has the latest connectedAt
 
       // get online connections
-       var onlineConns = _.where(this.props.contact, { disconnectedAt : null})
+       var onlineConns = _.filter(this.props.contact, (conn) => {
+         return conn.disconnectedAt === null
+       })
        console.log('onlineConns',onlineConns)
      // sort to get the most recent
        onlineConns = _.sortBy(onlineConns, (conn) => {
