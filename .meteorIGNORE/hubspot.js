@@ -427,6 +427,8 @@ jQuery(document).ready(function($) {
 
   console.log("ddp.sessionId = ", ddp.sessionId);
 
+  var triesOfCallInitialMethods = 0
+
   //Let's call the methods after making sure everything is there
   function callInitialMethods() {
     console.log("EVERYTHIN WE NEED IS clientConnId ", clientConnId,
@@ -451,7 +453,10 @@ jQuery(document).ready(function($) {
       });
     } else {
       setTimeout(function() {
-        callInitialMethods();
+        if (triesOfCallInitialMethods<200) {
+         callInitialMethods()
+         triesOfCallInitialMethods++
+       }
       }, 50);
     }
   } //callInitialMethods
