@@ -47,16 +47,16 @@ export default class ContactBox extends Component {
               {
                 onlineConns[0] ? (
                   <div className="startedContainer">
-                    <span className="started">Started:</span><span>{onlineConns[onlineConns.length-1].connectedAt}</span>
+                    <span className="started">Started:</span><span>{onlineConns[onlineConns.length-1].connectedAt.toString()}</span>
                  </div>
               ) :
               (
                 <div>
                    <div className="startedContainer">
-                      <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length-1].connectedAt}</span>
+                      <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length-1].connectedAt.toString()}</span>
                    </div>
                    <div className="stopedContainer">
-                      <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length-1].disconnectedAt}</span>
+                      <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length-1].disconnectedAt.toString()}</span>
                    </div>
                 </div>
               )
