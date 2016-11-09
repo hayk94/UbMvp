@@ -1,0 +1,114 @@
+[
+  {
+    "connID": "c5y5PJ4ANuPAx2PD6",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-08T12:43:58.826Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "rcNNvD2pjxoR4zTNg",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-08T13:02:53.194Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "rcyvBxZBAFZu2KbG7",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-08T13:21:30.340Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "5z3iwbZdAdtBhD4WP",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-08T13:21:56.743Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "LuNrXBA4niXaKFvoK",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-08T13:37:02.295Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "z26YeSmGreHMxgJfz",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-09T06:31:45.002Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "giHv8uQy4R67oiF8Z",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-09T06:43:08.921Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  },
+  {
+    "connID": "seKYtzmpoqLe79wrk",
+    "ipAdr": "89.249.197.77",
+    "httpHeads": {
+      "host": "ubmvp-92911.onmodulus.net",
+      "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36",
+      "realIP": null
+    },
+    "connectedAt": "2016-11-09T06:49:24.211Z",
+    "disconnectedAt": null,
+    "clicks": [],
+    "visits": [],
+    "hubspotInfo": []
+  }
+]
