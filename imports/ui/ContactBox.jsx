@@ -76,6 +76,27 @@ export default class ContactBox extends Component {
                   <span>Time | Date</span>
                 </div> {/* visitedClicked */}
               </div> {/* theConnsHead */}
+              <div className="realConns">
+                {this.props.contact.map((conn) => {
+                  return (
+                      <div className="aConn">
+                        <div className="visitedLinkContainer">
+                          <a href={conn.visits[0].visitedThis} className="visitedLink">{conn.visits[0].visitedThis}</a>
+                          <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
+                        </div>
+                        <div className="clicksContainer">
+                          {conn.clicks.map((click) => {
+                              return (
+                                <div className="clickedThisContainer">
+                                  <span className="clickedThis">{click.clickedThis ? click.clickedThis : 'unknown item'}</span>
+                                </div>
+                              )
+                          })}
+                        </div>
+                      </div>
+                  )
+                })}
+              </div> {/* realConns */}
             </div> {/* theConns */}
           </div> {/* contactConns */}
         </div>
