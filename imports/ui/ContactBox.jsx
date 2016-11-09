@@ -64,11 +64,12 @@ export default class ContactBox extends Component {
             </div>{/* contactLastStatus */}
           </div> {/* contactHead */}
           <div className="contactConns">
-            <h6 className="contactConnsHead">User Visited Pages & Clicked On These</h6>
+            <h3 className="contactConnsHead">User Visited Pages & Clicked On These</h3>
             <div className="theConns">
               <div className="theConnsHead">
                 <div className="visitedClicked">
                   <span className="vistedHead">Visited Links</span>
+                  <span> | </span>
                   <span className="clickedHead">Clicked This</span>
                 </div> {/* visitedClicked */}
                 <div className="timeDate">
