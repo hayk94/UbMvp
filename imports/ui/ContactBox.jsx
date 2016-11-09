@@ -43,10 +43,28 @@ export default class ContactBox extends Component {
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
               </p> {/* contactEmail */}
             </div> {/* contactInfo */}
+            <div class="contactLastStatus">
+              {
+                onlineConns[0] ? (
+                  <div class="startedContainer">
+                    <span class="started">Started:</span><span>{onlineConns[onlineConns.length-1].connectedAt}</span>
+                 </div>
+              ) :
+              (
+                <div>
+                   <div class="startedContainer">
+                      <span class="started">Started:</span><span>{this.props.contact[this.props.contact.length-1].connectedAt}</span>
+                   </div>
+                   <div class="stopedContainer">
+                      <span class="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length-1].disconnectedAt}</span>
+                   </div>
+                </div>
+              )
+              }
+            </div>{/* contactLastStatus */}
           </div> {/* contactHead */}
         </div>
     )
-
   } // render ()
 } // Component
 
