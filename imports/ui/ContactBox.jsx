@@ -80,7 +80,7 @@ export default class ContactBox extends Component {
                 {this.props.contact.map((conn) => {
                   console.log('conn',conn)
                   console.log('conn.visits[0]',conn.visits[0])
-                  console.log('conn.visits[0].visitedThis',conn.visits[0].visitedThis)
+                  // console.log('conn.visits[0].visitedThis',conn.visits[0].visitedThis)
                   return (
                       <div className="aConn">
                         <div className="visitedLinkContainer">
