@@ -78,6 +78,7 @@ export default class ContactBox extends Component {
               </div> {/* theConnsHead */}
               <div className="realConns">
                 {this.props.contact.map((conn) => {
+                  console.log('conn',conn)
                   return (
                       <div className="aConn">
                         <div className="visitedLinkContainer">
