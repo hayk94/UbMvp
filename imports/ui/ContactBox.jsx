@@ -85,10 +85,15 @@ export default class ContactBox extends Component {
                       <div className="aConn">
                         <div className="visitedLinkContainer">
                           {
-                            conn.visits[0] ? <a href={conn.visits[0].visitedThis} className="visitedLink">{conn.visits[0].visitedThis}</a> :
-                            <span>unknown</span>
+                            conn.visits[0] ? (
+                              <div class="visitedLink">
+                                <a href={conn.visits[0].visitedThis} className="theVisitedLink">{conn.visits[0].visitedThis}</a>
+                                <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
+                              </div>
+                            )
+                            : <span>unknown</span>
                            }
-                          <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
+
                         </div>
                         <div className="clicksContainer">
                           {conn.clicks.map((click) => {
