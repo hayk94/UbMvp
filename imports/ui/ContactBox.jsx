@@ -64,16 +64,16 @@ export default class ContactBox extends Component {
                 {
                   onlineConns[0] ? (
                     <div className="startedContainer">
-                      <span className="started">Started:</span><span>{onlineConns[onlineConns.length - 1].connectedAt.toString()}</span>
+                      <span className='started'>Started:</span><span>{onlineConns[onlineConns.length - 1].connectedAt.toLocaleTimeString() + ' | ' + onlineConns[onlineConns.length - 1].connectedAt.toLocaleDateString()}</span>
                    </div>
                 )
                 : (
                   <div>
                      <div className="startedContainer">
-                        <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length - 1].connectedAt.toString()}</span>
+                        <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length - 1].connectedAt.toLocaleTimeString() + ' | ' + this.props.contact[this.props.contact.length - 1].connectedAt.toLocaleDateString()}</span>
                      </div>
                      <div className="stopedContainer">
-                        <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length - 1].disconnectedAt.toString()}</span>
+                        <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length - 1].disconnectedAt.toLocaleTimeString() + ' | ' + this.props.contact[this.props.contact.length - 1].disconnectedAt.toLocaleDateString()}</span>
                      </div>
                   </div>
                 )
@@ -106,7 +106,7 @@ export default class ContactBox extends Component {
                             conn.visits[0] ? (
                               <div className="visitedLink">
                                 <a href={conn.visits[0].visitedThis} className="theVisitedLink">{conn.visits[0].visitedThis}</a>
-                                <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
+                                <span className='visitedLinkTime'>{conn.visits[0].visitedAt.toLocaleTimeString() + ' | ' + conn.visits[0].visitedAt.toLocaleDateString()}</span>
                               </div>
                             )
                             : <span className="theVisitedLink">unknown</span>
