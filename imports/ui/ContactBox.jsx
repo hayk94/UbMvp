@@ -57,7 +57,7 @@ export default class ContactBox extends Component {
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
               </p> {/* contactEmail */}
             </div> {/* contactInfo */}
-            <div className={"arrow" + (this.state.show ? 'active' : '')} onClick={this.handleClick}>
+            <div className={"arrow" + (this.state.show ? ' active' : '')} onClick={this.handleClick}>
               arrow
             </div> {/* arrow */}
             <div className="contactLastStatus">
@@ -80,7 +80,7 @@ export default class ContactBox extends Component {
               }
             </div>{/* contactLastStatus */}
           </div> {/* contactHead */}
-          <div className={"contactConns" + (this.state.show ? 'active' : '')}>
+          <div className={"contactConns" + (this.state.show ? ' active' : '')}>
             <h3 className="contactConnsHead">User Visited Pages & Clicked On These</h3>
             <div className="theConns">
               <div className="theConnsHead">
@@ -103,7 +103,7 @@ export default class ContactBox extends Component {
                         <div className="visitedLinkContainer">
                           {
                             conn.visits[0] ? (
-                              <div class="visitedLink">
+                              <div className="visitedLink">
                                 <a href={conn.visits[0].visitedThis} className="theVisitedLink">{conn.visits[0].visitedThis}</a>
                                 <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
                               </div>
