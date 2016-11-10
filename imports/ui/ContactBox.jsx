@@ -59,7 +59,6 @@ export default class ContactBox extends Component {
                 </p> {/* contactEmail */}
               </div> {/* contactInfo */}
               <div className={"arrow" + (this.state.show ? ' active' : '')} onClick={this.handleClick}>
-                arrow
               </div> {/* arrow */}
               <div className="contactLastStatus">
                 {

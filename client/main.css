@@ -1,4 +1,218 @@
-/* CSS declarations go here */
-.conns {
-  display: none;
+.mainContentContainer {
+    max-width: 970px;
+}
+
+.mainContentContainer> h1 {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.contactHead {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-bottom: 1px #cbcbcb solid;
+    min-height: 80px;
+    padding-left: 3%;
+}
+
+.contactInfo {
+    display: flex;
+    width: 80%;
+}
+
+.contactInfo>p {
+    margin-right: 5px;
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    padding-right: 5px;
+}
+
+.contactEmail {
+    font-style: italic;
+}
+
+.contactInfoContainer {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.arrow {
+    cursor: pointer;
+    align-self: center;
+    justify-content: flex-end;
+    width: 20%;
+    display: flex;
+    height: 0px;
+}
+
+.contactImg img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contactImg {
+    width: 7%;
+}
+
+.arrow:before {
+    content: "\f054";
+    display: block;
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+
+.arrow.active:before {
+    content: "\f078";
+    display: block;
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+
+.started {
+    color: #58b158;
+    font-weight: bold;
+}
+
+.started:before {
+    content: "\f144";
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.stoped {
+    color: #ee4c4c;
+    font-weight: bold;
+}
+
+.stoped:before {
+    content: "\f28d";
+    display: inline-block;
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+#render-target {
+    background: #ededed;
+}
+
+.contactBox {
+    margin-bottom: 20px;
+    border: 1px #cbcbcb solid;
+    background: #fff;
+}
+
+hr.myHR {
+    color: #cbcbcb;
+    border-color: #cbcbcb;
+}
+
+.contactImg.online {
+    position: relative;
+}
+
+.contactImg.online:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #58b158;
+    border-radius: 50%;
+}
+
+.contactImg.offline:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ee4c4c;
+    border-radius: 50%;
+}
+
+.clients {
+    padding: 0;
+    margin: 0;
+}
+
+.contactConnsHead {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contactConns.container {
+    /* max-width: 970px; */
+}
+
+.contactConns {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.theConnsHead {
+    display: flex;
+    border-bottom: 1px #cbcbcb solid;
+}
+
+.visitedClicked {
+    width: 90%;
+}
+
+.visitedClicked .vistedHead {
+    color: #fca113;
+}
+
+.visitedClicked .clickedHead {
+    color: #cd4848;
+}
+
+.visitedClicked span {
+    color: #cbcbcb;
+}
+
+.timeDate {
+    color: #cbcbcb;
+}
+
+.visitedLink {
+    display: flex;
+}
+
+.theVisitedLink:before {
+    content: "\f15b";
+    font-family: FontAwesome;
+    margin-right: 10px;
+    color: #fca113;
+    text-decoration: none;
+    font-size:16px;
+}
+.clickedThis:before {
+    content: "\f245";
+    font-family: FontAwesome;
+    margin-right: 10px;
+    color: #cd4848;
+    text-decoration: none;
+    font-size:16px;
+}
+.visitedLinkTime {
+    display: block;
+    text-align: end;
+    width: 100%;
+}
+
+.theVisitedLink {
+    width: 100%;
+}
+
+.aConn {
+    margin-bottom: 30px;
+}
+
+
+body {
+    color: #383838;
 }
