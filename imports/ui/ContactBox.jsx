@@ -9,7 +9,13 @@ import React, { Component, PropTypes } from 'react'
 /* =============================================<<<<< */
 
 export default class ContactBox extends Component {
-  render () {
+  constructor (props) {
+    super(props)
+    this.state = {
+      show: false
+    }
+  }
+    render () {
       console.log('this.props.contact in ContactBox.jsx',this.props.contact)
       // TODO: Show or hide all connections
 
@@ -42,7 +48,7 @@ export default class ContactBox extends Component {
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
               </p> {/* contactEmail */}
             </div> {/* contactInfo */}
-            <div className="arrow">
+            <div className={"arrow" + (this.state.show ? 'active' : '')}>
               arrow
             </div> {/* arrow */}
             <div className="contactLastStatus">
@@ -65,7 +71,7 @@ export default class ContactBox extends Component {
               }
             </div>{/* contactLastStatus */}
           </div> {/* contactHead */}
-          <div className="contactConns">
+          <div className={"contactConns" + (this.state.show ? 'active' : '')}>
             <h3 className="contactConnsHead">User Visited Pages & Clicked On These</h3>
             <div className="theConns">
               <div className="theConnsHead">
