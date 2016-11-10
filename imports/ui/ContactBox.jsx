@@ -80,7 +80,7 @@ export default class ContactBox extends Component {
               }
             </div>{/* contactLastStatus */}
           </div> {/* contactHead */}
-          <div className={"contactConns" + (this.state.show ? ' active' : '')}>
+          {this.state.show ? (<div className={"contactConns" + (this.state.show ? ' active' : '')}>
             <h3 className="contactConnsHead">User Visited Pages & Clicked On These</h3>
             <div className="theConns">
               <div className="theConnsHead">
@@ -126,7 +126,8 @@ export default class ContactBox extends Component {
                 })}
               </div> {/* realConns */}
             </div> {/* theConns */}
-          </div> {/* contactConns */}
+          </div>
+        ) : null}
         </div>
     )
   } // render ()
