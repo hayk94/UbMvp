@@ -39,46 +39,48 @@ export default class ContactBox extends Component {
             <div className="contactImg">
               <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/524202-200.png" />
             </div> {/* contactImg */}
-            <div className="contactInfo">
-              <p className="contactName">
-                <strong>
-                  <span className="contactFirstName">
-                    {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'unknown first name '}
-                  </span>
-                  <span className="contactLastName">
-                    {this.props.contact[0].lastName ? ' ' + this.props.contact[0].lastName : 'unknown last name'}
-                  </span>
-                </strong>
-              </p> {/* contactName */}
-              <p className="contactEmail">
-                {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}>{this.props.contact[0].email}</a> : <span>unknown mail</span>}
-              </p> {/* contactEmail */}
-              <p className="contactIp">
-                <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
-              </p> {/* contactEmail */}
-            </div> {/* contactInfo */}
-            <div className={"arrow" + (this.state.show ? ' active' : '')} onClick={this.handleClick}>
-              arrow
-            </div> {/* arrow */}
-            <div className="contactLastStatus">
-              {
-                onlineConns[0] ? (
-                  <div className="startedContainer">
-                    <span className="started">Started:</span><span>{onlineConns[onlineConns.length - 1].connectedAt.toString()}</span>
-                 </div>
-              )
-              : (
-                <div>
-                   <div className="startedContainer">
-                      <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length - 1].connectedAt.toString()}</span>
+            <div className="contactInfoContainer">
+              <div className="contactInfo">
+                <p className="contactName">
+                  <strong>
+                    <span className="contactFirstName">
+                      {this.props.contact[0].firstName ? this.props.contact[0].firstName : 'unknown first name '}
+                    </span>
+                    <span className="contactLastName">
+                      {this.props.contact[0].lastName ? ' ' + this.props.contact[0].lastName : 'unknown last name'}
+                    </span>
+                  </strong>
+                </p> {/* contactName */}
+                <p className="contactEmail">
+                  {this.props.contact[0].email ? <a href={'mailto:' + this.props.contact[0].email}>{this.props.contact[0].email}</a> : <span>unknown mail</span>}
+                </p> {/* contactEmail */}
+                <p className="contactIp">
+                  <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
+                </p> {/* contactEmail */}
+              </div> {/* contactInfo */}
+              <div className={"arrow" + (this.state.show ? ' active' : '')} onClick={this.handleClick}>
+                arrow
+              </div> {/* arrow */}
+              <div className="contactLastStatus">
+                {
+                  onlineConns[0] ? (
+                    <div className="startedContainer">
+                      <span className="started">Started:</span><span>{onlineConns[onlineConns.length - 1].connectedAt.toString()}</span>
                    </div>
-                   <div className="stopedContainer">
-                      <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length - 1].disconnectedAt.toString()}</span>
-                   </div>
-                </div>
-              )
-              }
-            </div>{/* contactLastStatus */}
+                )
+                : (
+                  <div>
+                     <div className="startedContainer">
+                        <span className="started">Started:</span><span>{this.props.contact[this.props.contact.length - 1].connectedAt.toString()}</span>
+                     </div>
+                     <div className="stopedContainer">
+                        <span className="stoped">Stoped:</span><span>{this.props.contact[this.props.contact.length - 1].disconnectedAt.toString()}</span>
+                     </div>
+                  </div>
+                )
+                }
+              </div> {/* contactLastStatus */}
+            </div> {/* contactInfoContainer */}
           </div> {/* contactHead */}
           {this.state.show ? (<div className={"contactConns" + (this.state.show ? ' active' : '')}>
             <h3 className="contactConnsHead">User Visited Pages & Clicked On These</h3>
