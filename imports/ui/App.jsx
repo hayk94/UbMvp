@@ -17,11 +17,13 @@ class App extends Component {
   render () {
     return (
       <div className="container">
-        <h1>All Users</h1>
-        <hr className="myHR" />
-        <ul className="clients">
-          {this.renderClients()}
-        </ul>
+        <div className="mainContentContainer container">
+          <h1>All Users</h1>
+          <hr className="myHR" />
+          <ul className="clients">
+            {this.renderClients()}
+          </ul>
+        </div>
         <pre>
         {
            JSON.stringify(Ips.find({}, {
