@@ -109,7 +109,7 @@ export default class ContactBox extends Component {
                                 <span className="visitedLinkTime">{conn.visits[0].visitedAt.toString()}</span>
                               </div>
                             )
-                            : <span>unknown</span>
+                            : <span className="theVisitedLink">unknown</span>
                            }
 
                         </div>
