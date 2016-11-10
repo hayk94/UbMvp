@@ -11,8 +11,7 @@ import React, { Component, PropTypes } from 'react'
 export default class ContactBox extends Component {
   render () {
       console.log('this.props.contact in ContactBox.jsx',this.props.contact)
-      // TODO: Make connections to render
-      // get from the contact[] the objects{} that do not have disconnectedAt and get the one that has the latest connectedAt
+      // TODO: Show or hide all connections
 
       // get online connections
        var onlineConns = _.filter(this.props.contact, (conn) => {

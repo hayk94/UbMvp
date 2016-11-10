@@ -7,12 +7,16 @@
                 - [v] Add all needed packages
         *- [ ] UI*
                 - [v] Think the structure
-                *- [ ] Render the connections*
-                      *- [ ] Learn underscore*
-                        - [ ] render the last connection details in the contact head
-                              - [ ] learn underscore to get the last connection
-                        - [ ] Render other connections in a chronological order
-                              - [ ] learn underscore to sort
+                - [v] Render the connections
+                      - [v] Learn underscore
+                        - [v] render the last connection details in the contact head
+                              - [v] learn underscore to get the last connection
+                        - [v] Render other connections in a chronological order
+                              - [v] learn underscore to sort
+                *- [ ] Show hide all connections*
+                        - [ ] add the button in the jsx
+                        - [ ] add state to the ContactBox Component
+                        - [ ] add click function and event
 **SUBPUB - [V] Make Everything to work with publications and subscriptions**
                - [v] Publish
                - [v] Subscribe
