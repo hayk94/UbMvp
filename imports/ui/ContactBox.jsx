@@ -14,8 +14,17 @@ export default class ContactBox extends Component {
     this.state = {
       show: false
     }
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this)
   }
-    render () {
+
+  handleClick () {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
+  }
+  render () {
       console.log('this.props.contact in ContactBox.jsx',this.props.contact)
       // TODO: Show or hide all connections
 
@@ -48,7 +57,7 @@ export default class ContactBox extends Component {
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
               </p> {/* contactEmail */}
             </div> {/* contactInfo */}
-            <div className={"arrow" + (this.state.show ? 'active' : '')}>
+            <div className={"arrow" + (this.state.show ? 'active' : '')} onClick={this.handleClick}>
               arrow
             </div> {/* arrow */}
             <div className="contactLastStatus">
