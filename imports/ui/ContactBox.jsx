@@ -42,6 +42,9 @@ export default class ContactBox extends Component {
                 <strong>{this.props.contact[0].ipAdr ? this.props.contact[0].ipAdr : 'unknown ip'}</strong>
               </p> {/* contactEmail */}
             </div> {/* contactInfo */}
+            <div className="arrow">
+              arrow
+            </div> {/* arrow */}
             <div className="contactLastStatus">
               {
                 onlineConns[0] ? (
