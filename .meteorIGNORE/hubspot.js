@@ -1,5 +1,6 @@
 // NOTE: This file must be loaded in the hubspot and when building the server in meteor comment the whole code
 
+
 // HERE BEGINS THE STANDALONE LIBRARY, this can be put in another file
 (function(root, factory) {
   if (typeof define === "function" && define.amd) {

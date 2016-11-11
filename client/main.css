@@ -98,7 +98,7 @@
     margin-right: 5px;
 }
 
-#render-target {
+#render-target,body {
     background: #ededed;
 }
 
