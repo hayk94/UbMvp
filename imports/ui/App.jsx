@@ -24,15 +24,19 @@ class App extends Component {
             {this.renderClients()}
           </ul>
         </div>
-        <pre>
         {
-           JSON.stringify(Ips.find({}, {
-                sort: {
-                  createdAt: -1
+          process.env.NODE_ENV === 'development' ? (
+            <pre>
+            {
+               JSON.stringify(Ips.find({}, {
+                    sort: {
+                      createdAt: -1
+                    }
+                  }).fetch(), undefined, 2)
                 }
-              }).fetch(), undefined, 2)
-            }
-        </pre>
+            </pre>
+          ) : null
+        }
       </div>
     )
   }
